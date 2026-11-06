@@ -145,7 +145,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=2072150807]
+[node name="Player" type="CharacterBody2D" unique_id=2072150807 groups=["player"]]
 position = Vector2(288, 165)
 scale = Vector2(3, 3)
 motion_mode = 1

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://caxfdlyt2ae3i"]
+
+[ext_resource type="PackedScene" uid="uid://ciaox5cqqxsdc" path="res://player/player.tscn" id="1_j22f7"]
+[ext_resource type="PackedScene" uid="uid://dunrk3fnnd8ng" path="res://interactables/boss.tscn" id="2_ia7jw"]
+
+[node name="BossInteractionTest" type="Node2D" unique_id=747327354]
+
+[node name="Player" parent="." unique_id=2072150807 instance=ExtResource("1_j22f7")]
+
+[node name="Boss" parent="." unique_id=1651596049 instance=ExtResource("2_ia7jw")]

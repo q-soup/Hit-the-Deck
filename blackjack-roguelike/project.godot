@@ -60,10 +60,6 @@ interact={
 ]
 }
 
-[layer_names]
-
-2d_physics/layer_2="interactions"
-
 [physics]
 
 3d/physics_engine="Jolt Physics"
