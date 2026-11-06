@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 100.0 #changed from 300 cuz he was zoomin
 var screen_size
 var last_direction
 
@@ -42,7 +42,8 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	"""position = position.clamp(Vector2.ZERO, screen_size) - The player was getting stuck bc of 
+	this since our floor is bigger than the screen size"""
 	
 	if Input.is_action_pressed("move_right") and Input.is_action_pressed("move_up"):
 		$AnimatedSprite2D.animation = "walk NE"
