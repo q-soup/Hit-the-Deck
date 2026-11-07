@@ -9,10 +9,3 @@
 
 [node name="Player" parent="Floor1Casino2" unique_id=2072150807 instance=ExtResource("2_ret5k")]
 position = Vector2(120, 88)
-
-[node name="Camera2D" type="Camera2D" parent="Floor1Casino2/Player" unique_id=2084338079]
-position = Vector2(-53.00261, -29.283926)
-limit_left = 0
-limit_top = 0
-limit_right = 768
-limit_bottom = 480
