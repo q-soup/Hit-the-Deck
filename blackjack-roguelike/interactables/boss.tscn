@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dunrk3fnnd8ng"]
+
+[ext_resource type="Script" uid="uid://dpawkpi6ntqoc" path="res://interactables/boss.gd" id="1_vgir5"]
+[ext_resource type="Texture2D" uid="uid://da6swoe8dx5k7" path="res://interactables/demon_idle_5.png" id="2_3lctd"]
+[ext_resource type="PackedScene" uid="uid://c3fjincv3ril0" path="res://interactables/interactable.tscn" id="3_vgir5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d235m"]
+radius = 47.0
+height = 112.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgir5"]
+radius = 56.0
+
+[node name="Boss" type="CharacterBody2D" unique_id=1651596049]
+position = Vector2(66, 53)
+script = ExtResource("1_vgir5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1077731672]
+position = Vector2(-2, 28)
+shape = SubResource("CapsuleShape2D_d235m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=23644808]
+texture = ExtResource("2_3lctd")
+
+[node name="Interactable" parent="." unique_id=1726701162 instance=ExtResource("3_vgir5")]
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=1035421220]
+position = Vector2(-1, 27)
+shape = SubResource("CircleShape2D_vgir5")
+
+[editable path="Interactable"]
