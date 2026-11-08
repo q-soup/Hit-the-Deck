@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br4ih4l6y2aqu"
-path="res://.godot/imported/adventurer_default_walk_e_04.png-15282519e0f093ae6944099d79d759b3.ctex"
+uid="uid://xtksd4bhbnrq"
+path="res://.godot/imported/adventurer_default_walk_s_06.png-e75a0b49cb8e37ec6cbd0c4d3f6246a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/adventurer_default_walk_e_04.png"
-dest_files=["res://.godot/imported/adventurer_default_walk_e_04.png-15282519e0f093ae6944099d79d759b3.ctex"]
+source_file="res://player/animations/adventurer_default_walk_s_06.png"
+dest_files=["res://.godot/imported/adventurer_default_walk_s_06.png-e75a0b49cb8e37ec6cbd0c4d3f6246a2.ctex"]
 
 [params]
 
