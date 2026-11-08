@@ -146,7 +146,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=2072150807 groups=["player"]]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 motion_mode = 1
 script = ExtResource("1_knn7v")
 metadata/_edit_group_ = true
