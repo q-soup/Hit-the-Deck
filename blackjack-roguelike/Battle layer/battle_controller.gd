@@ -77,3 +77,4 @@ func pretty(card: String) -> String:
 	var suit: String = card.substr(card.length() - 1)
 	var symbols := {"H": "♥", "D": "♦", "C": "♣", "S": "♠"}
 	return rank + symbols[suit]
+#poo poo merge
