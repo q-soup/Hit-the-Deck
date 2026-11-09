@@ -1,5 +1,7 @@
 extends Node
 
+signal finished(won: bool)
+
 const BATTLE_UI_SCENE: PackedScene = preload("res://Battle layer/battle_ui.tscn")
 
 @onready var game = $Blackjack
@@ -29,9 +31,12 @@ func _on_stand_pressed() -> void:
 	refresh_ui()
 	
 func _on_next_round_pressed() -> void:
-	battle_ui.reset_for_new_round()
-	game.start_round()
-	refresh_ui()
+	if game.outcome == "push":
+		battle_ui.reset_for_new_round()
+		game.start_round()
+		refresh_ui()
+	else:
+		finished.emit(game.outcome == "win")
 
 func _on_round_ended(message: String) -> void:
 	battle_ui.show_result(message)

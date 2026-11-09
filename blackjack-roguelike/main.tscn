@@ -1,22 +1,26 @@
 [gd_scene format=3 uid="uid://ctphncgtbnaoe"]
 
-[ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/floor_1_casino.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bxwdyyb77ouor" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/casino/floor_1_casino.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ciaox5cqqxsdc" path="res://player/player.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node" unique_id=627307981]
 process_mode = 3
-
-[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1011141981]
-process_mode = 3
-layer = 10
+script = ExtResource("1_h2yge")
 
 [node name="Floor1Casino" parent="." unique_id=1757320050 instance=ExtResource("1_ig7tw")]
 
 [node name="Player" parent="Floor1Casino" unique_id=2072150807 instance=ExtResource("2_0xm2m")]
 position = Vector2(120, 88)
 
-[node name="Camera2D" type="Camera2D" parent="Floor1Casino/Player" unique_id=1909617565]
+[node name="Camera2D2" type="Camera2D" parent="Floor1Casino/Player" unique_id=1909617565]
 limit_left = 0
 limit_top = 0
 limit_right = 768
 limit_bottom = 480
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1011141981]
+process_mode = 3
+layer = 10
+
+[node name="BattleLayer2" type="Node" parent="." unique_id=132037331]

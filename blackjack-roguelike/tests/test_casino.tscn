@@ -15,3 +15,5 @@ position = Vector2(120, 88)
 y_sort_enabled = true
 position = Vector2(641, 201)
 scale = Vector2(0.6, 0.6)
+
+[node name="BattleLayer2" type="Node" parent="." unique_id=780945984]
