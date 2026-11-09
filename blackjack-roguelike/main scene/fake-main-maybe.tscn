@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dne00tj05t1nk"]
+
+[ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/casino/floor_1_casino.tscn" id="1_0vbd8"]
+[ext_resource type="PackedScene" uid="uid://ciaox5cqqxsdc" path="res://player/player.tscn" id="2_ofvj7"]
+[ext_resource type="PackedScene" uid="uid://dunrk3fnnd8ng" path="res://interactables/boss.tscn" id="3_4vdua"]
+
+[node name="Main" type="Node" unique_id=627307981]
+process_mode = 3
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1011141981]
+process_mode = 3
+layer = 10
+
+[node name="Floor1Casino2" parent="." unique_id=1757320050 instance=ExtResource("1_0vbd8")]
+
+[node name="Player" parent="Floor1Casino2" unique_id=2072150807 instance=ExtResource("2_ofvj7")]
+position = Vector2(120, 88)
+
+[node name="Boss" parent="Floor1Casino2" unique_id=1651596049 instance=ExtResource("3_4vdua")]
+y_sort_enabled = true
+position = Vector2(641, 201)
+scale = Vector2(0.6, 0.6)

@@ -8,8 +8,9 @@
 radius = 47.0
 height = 112.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vgir5"]
-radius = 56.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upmxn"]
+radius = 61.0
+height = 180.0
 
 [node name="Boss" type="CharacterBody2D" unique_id=1651596049]
 position = Vector2(66, 53)
@@ -27,7 +28,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=1035421220]
-position = Vector2(-1, 27)
-shape = SubResource("CircleShape2D_vgir5")
+position = Vector2(1, 38)
+shape = SubResource("CapsuleShape2D_upmxn")
 
 [editable path="Interactable"]
