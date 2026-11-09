@@ -8,9 +8,7 @@ var player_hand: Array[String] = []
 var dealer_hand: Array[String] = []
 var round_over := false
 
-func _ready() -> void:
-	start_round()
-
+signal round_ended(message: String)
 
 func build_deck() -> void:
 	deck.clear()
@@ -48,6 +46,20 @@ func hand_value(hand: Array[String]) -> int:
 		aces -= 1
 	return total
 
+func is_soft(hand: Array[String]) -> bool:
+	var total := 0
+	var aces := 0
+	for card in hand:
+		total += card_value(card)
+		if card.begins_with("A"):
+			aces += 1
+
+	while total > 21 and aces > 0:
+		total -= 10
+		aces -= 1
+
+	# If an ace is still left over, it's counting as 11, so the hand is soft
+	return aces > 0
 
 func start_round() -> void:
 	build_deck()
@@ -80,7 +92,7 @@ func stand() -> void:
 	if round_over:
 		return
 
-	while hand_value(dealer_hand) < 17:
+	while hand_value(dealer_hand) < 17 or (hand_value(dealer_hand) == 17 and is_soft(dealer_hand)):
 		dealer_hand.append(draw_card())
 
 	var p := hand_value(player_hand)
@@ -98,3 +110,4 @@ func stand() -> void:
 func end_round(message: String) -> void:
 	round_over = true
 	print(message)
+	round_ended.emit(message)

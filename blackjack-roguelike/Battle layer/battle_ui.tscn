@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://iopyi216775v"]
+
+[ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
+
+[node name="BattleUI" type="CanvasLayer" unique_id=818283804]
+script = ExtResource("1_3hth4")
+
+[node name="Root" type="Control" parent="." unique_id=1300296484]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=1903613328]
+layout_mode = 0
+offset_left = 295.5
+offset_top = 347.0
+offset_right = 295.5
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.052131318, 0.3531993, 0, 0.6)
+
+[node name="NextRoundButton" type="Button" parent="Root" unique_id=1355021604]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Next Round"
+
+[node name="DealerArea" type="VBoxContainer" parent="Root" unique_id=833353480]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.5
+offset_right = 24.5
+offset_bottom = 18.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Root/DealerArea" unique_id=1461854292]
+layout_mode = 2
+text = "Dealer"
+
+[node name="DealerHand" type="HBoxContainer" parent="Root/DealerArea" unique_id=1209924921]
+layout_mode = 2
+
+[node name="PlayerArea" type="VBoxContainer" parent="Root" unique_id=1608838138]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.5
+offset_top = -40.0
+offset_right = 24.5
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Root/PlayerArea" unique_id=564853968]
+layout_mode = 2
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="PlayerHand" type="HBoxContainer" parent="Root/PlayerArea" unique_id=968605345]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="Root" unique_id=610131597]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="HitButton" type="Button" parent="Root/Buttons" unique_id=1744066681]
+layout_mode = 2
+text = "Hit"
+
+[node name="StandButton" type="Button" parent="Root/Buttons" unique_id=368909203]
+layout_mode = 2
+text = "Stand"
+
+[node name="ResultLabel" type="Label" parent="Root" unique_id=2009543090]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
