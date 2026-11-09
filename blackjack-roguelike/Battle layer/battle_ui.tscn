@@ -14,11 +14,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Dim" type="ColorRect" parent="Root" unique_id=1903613328]
-layout_mode = 0
-offset_left = 295.5
-offset_top = 347.0
-offset_right = 295.5
-offset_bottom = 347.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.052131318, 0.3531993, 0, 0.6)
@@ -109,3 +108,10 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HPLabel" type="Label" parent="Root" unique_id=1927742664]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 328.0
+offset_right = 72.0
+offset_bottom = 351.0

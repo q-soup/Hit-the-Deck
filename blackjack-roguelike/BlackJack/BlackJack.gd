@@ -8,7 +8,7 @@ var player_hand: Array[String] = []
 var dealer_hand: Array[String] = []
 var round_over := false
 
-signal round_ended(message: String)
+signal round_ended(result: String, message: String)
 
 func build_deck() -> void:
 	deck.clear()
@@ -85,7 +85,7 @@ func hit() -> void:
 	player_hand.append(draw_card())
 	print("Player: ", player_hand, " = ", hand_value(player_hand))
 	if hand_value(player_hand) > 21:
-		end_round("Bust! Dealer wins.")
+		end_round("lose", "Bust! Dealer wins.")
 
 
 func stand() -> void:
@@ -100,14 +100,14 @@ func stand() -> void:
 	print("Dealer: ", dealer_hand, " = ", d)
 
 	if d > 21 or p > d:
-		end_round("You win!")
+		end_round("win", "You win!")
 	elif p == d:
-		end_round("Push (tie).")
+		end_round("push","Push (tie).")
 	else:
-		end_round("Dealer wins.")
+		end_round("lose", "Dealer wins.")
 
 
-func end_round(message: String) -> void:
+func end_round(result: String, message: String) -> void:
 	round_over = true
 	print(message)
-	round_ended.emit(message)
+	round_ended.emit(result, message)
