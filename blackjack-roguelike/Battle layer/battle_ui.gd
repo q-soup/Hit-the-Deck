@@ -48,4 +48,4 @@ func reset_for_new_round() -> void:
 	set_buttons_enabled(true)
 	
 func set_hp(player_hp: int, boss_hp: int):
-	hp_label.text = "You: %d	Boss: %d" % [player_hp, boss_hp]
+	hp_label.text = "You: %d    Boss: %d" % [player_hp, boss_hp]

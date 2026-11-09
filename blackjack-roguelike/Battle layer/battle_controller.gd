@@ -44,7 +44,6 @@ func _on_next_round_pressed() -> void:
 	battle_ui.reset_for_new_round()
 	game.start_round()
 	refresh_ui()
-	battle_ui.set_hp(RunState.hp, boss_hp)
 
 func _on_round_ended(result: String, message: String) -> void:
 	if result == "win":
@@ -54,13 +53,12 @@ func _on_round_ended(result: String, message: String) -> void:
 		
 	if boss_hp == 0:
 		message = "Boss defeated!"
-	elif $Runstate.hp == 0:
+	elif RunState.hp == 0:
 		message = "You lost..."
 		
 	battle_ui.show_result(message)
 	battle_ui.set_buttons_enabled(false)
 	refresh_ui()
-	battle_ui.set_hp(RunState.hp, boss_hp)
 
 # Redraws both hands from the blackjack script's data
 func refresh_ui() -> void:
@@ -71,6 +69,7 @@ func refresh_ui() -> void:
 		# Dealer's second card stays face down until the round is over
 		var hidden: bool = (i == 1 and not game.round_over)
 		battle_ui.add_card(true, pretty(game.dealer_hand[i]), hidden)
+	battle_ui.set_hp(RunState.hp, boss_hp)
 
 # Turns "KH" into "K♥"
 func pretty(card: String) -> String:
