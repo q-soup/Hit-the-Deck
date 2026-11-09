@@ -1,11 +1,11 @@
 extends Node
 
+signal finished(won: bool)
+
 const BATTLE_UI_SCENE: PackedScene = preload("res://Battle layer/battle_ui.tscn")
 
 @onready var game = $Blackjack
 var battle_ui
-
-signal finished(won)
 
 @export var boss_max_hp = 50
 @export var player_damage = 10

@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c3fjincv3ril0" path="res://interactables/interactable.tscn" id="3_vgir5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d235m"]
-radius = 47.0
-height = 112.0
+radius = 43.0
+height = 102.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vgir5"]
-radius = 56.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cahr0"]
+radius = 80.0
+height = 160.0
 
 [node name="Boss" type="CharacterBody2D" unique_id=1651596049]
 position = Vector2(66, 53)
@@ -27,7 +28,7 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=1035421220]
-position = Vector2(-1, 27)
-shape = SubResource("CircleShape2D_vgir5")
+position = Vector2(-2, 77)
+shape = SubResource("CapsuleShape2D_cahr0")
 
 [editable path="Interactable"]

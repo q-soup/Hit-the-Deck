@@ -7,6 +7,7 @@ var deck: Array[String] = []
 var player_hand: Array[String] = []
 var dealer_hand: Array[String] = []
 var round_over := false
+var outcome := ""
 
 signal round_ended(result: String, message: String)
 
@@ -62,6 +63,7 @@ func is_soft(hand: Array[String]) -> bool:
 	return aces > 0
 
 func start_round() -> void:
+	outcome = ""
 	build_deck()
 	player_hand.clear()
 	dealer_hand.clear()
@@ -102,12 +104,13 @@ func stand() -> void:
 	if d > 21 or p > d:
 		end_round("win", "You win!")
 	elif p == d:
-		end_round("push","Push (tie).")
+		end_round("push", "Push (tie).")
 	else:
 		end_round("lose", "Dealer wins.")
 
 
 func end_round(result: String, message: String) -> void:
 	round_over = true
+	outcome = result
 	print(message)
 	round_ended.emit(result, message)
