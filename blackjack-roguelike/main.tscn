@@ -1,11 +1,18 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://ctphncgtbnaoe"]
 
 [ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/floor_1_casino.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ciaox5cqqxsdc" path="res://player/player.tscn" id="2_0xm2m"]
+=======
+[gd_scene format=3 uid="uid://crs3hcxae3fja"]
+
+[ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/floor_1_casino.tscn" id="1_ig7tw"]
+>>>>>>> Stashed changes
 
 [node name="Main" type="Node" unique_id=627307981]
 process_mode = 3
 
+<<<<<<< Updated upstream
 [node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1011141981]
 process_mode = 3
 layer = 10
@@ -20,3 +27,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 768
 limit_bottom = 480
+=======
+[node name="Floor1Casino" parent="." unique_id=1757320050 instance=ExtResource("1_ig7tw")]
+process_mode = 1
+
+[node name="BattleLayer" type="CanvasLayer" parent="." unique_id=1011141981]
+process_mode = 3
+layer = 10
+>>>>>>> Stashed changes

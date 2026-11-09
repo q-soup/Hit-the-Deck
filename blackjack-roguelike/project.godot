@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Blackjack Roguelike"
+run/main_scene="uid://crs3hcxae3fja"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 RunState="*uid://25s8t4kxpdvm"
+Events="*uid://d0atvn5boc4ha"
 
 [display]
 
