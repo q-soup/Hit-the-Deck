@@ -8,6 +8,7 @@ const CARD_SCENE: PackedScene = preload("res://Battle layer/card_place_holder.ts
 @onready var stand_button: Button = $Root/Buttons/StandButton
 @onready var result_label: Label = $Root/ResultLabel
 @onready var next_round_button: Button = $Root/NextRoundButton
+@onready var hp_label: Label = $Root/HPLabel
 
 signal hit_pressed
 signal stand_pressed
@@ -45,3 +46,6 @@ func reset_for_new_round() -> void:
 	result_label.hide()
 	next_round_button.hide()
 	set_buttons_enabled(true)
+	
+func set_hp(player_hp: int, boss_hp: int):
+	hp_label.text = "You: %d	Boss: %d" % [player_hp, boss_hp]
