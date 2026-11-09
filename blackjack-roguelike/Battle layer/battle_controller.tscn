@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dgppd1k38xj"]
+
+[ext_resource type="Script" uid="uid://l3grlxj3jijt" path="res://Battle layer/battle_controller.gd" id="1_1nvxy"]
+[ext_resource type="Script" uid="uid://c6wifwjcb4dg7" path="res://BlackJack/BlackJack.gd" id="2_4cc1g"]
+
+[node name="BattleController" type="Node" unique_id=1516370256]
+script = ExtResource("1_1nvxy")
+
+[node name="Blackjack" type="Node" parent="." unique_id=1410763612]
+script = ExtResource("2_4cc1g")
