@@ -108,3 +108,10 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HPLabel" type="Label" parent="Root" unique_id=1927742664]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 328.0
+offset_right = 72.0
+offset_bottom = 351.0
