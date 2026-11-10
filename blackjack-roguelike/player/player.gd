@@ -1,31 +1,27 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0 #changed from 300 cuz he was zoomin
+const SPEED = 60.0 #changed from 300 cuz he was zoomin
 var screen_size
 var last_direction
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity (floating rn).
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
 
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-		velocity.y = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	move_and_slide()
 	
 func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta):
+	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if direction:
+		velocity = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
+	move_and_slide()
 	if Input.is_action_pressed("move_right"):
 		velocity.x +=1
 	if Input.is_action_pressed("move_left"):
