@@ -21,6 +21,7 @@ func reset_run():
 	beaten_bosses.clear()
 	flags.clear()
 	hp_changed.emit(hp, max_hp)
+	money_changed.emit(money)
 
 
 func take_damage(amount):
