@@ -1,12 +1,14 @@
 extends Node
 
 signal hp_changed(hp, max_hp)
+# Notifies other parts of the game when the player's money changes.
+signal money_changed(money)
 
 const START_HP = 100
 
 var max_hp = START_HP
 var hp = START_HP
-var money = 0
+var money: int = 0
 var deck: Array = [] #will change once someone finishes the card resource
 var beaten_bosses: Array[String] = []
 var flags: Array[String] = []
@@ -19,6 +21,8 @@ func reset_run():
 	beaten_bosses.clear()
 	flags.clear()
 	hp_changed.emit(hp, max_hp)
+	money_changed.emit(money)
+
 
 func take_damage(amount):
 	hp = max(hp - amount, 0)
@@ -26,3 +30,28 @@ func take_damage(amount):
 
 func has_flag(flag): #pass in a string
 	return flags.has(flag)
+	
+# Adds money to the player's balance after winning a fight.
+func earn_money(amount: int) -> void:
+	if amount <= 0:
+		return
+
+	money += amount
+	money_changed.emit(money)
+
+
+# Checks whether the player has enough money to purchase an item.
+func can_afford(cost: int) -> bool:
+	return cost >= 0 and money >= cost
+
+
+# Attempts to purchase an item by deducting its cost.
+# Returns true if the player has enough money.
+# Returns false if the player cannot afford the item.
+func spend_money(cost: int) -> bool:
+	if cost < 0 or not can_afford(cost):
+		return false
+
+	money -= cost
+	money_changed.emit(money)
+	return true
