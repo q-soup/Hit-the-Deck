@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-const CARD_SCENE: PackedScene = preload("res://Battle layer/card_place_holder.tscn")
+const CARD_SCENE: PackedScene = preload("res://Battle layer/cards.tscn")
 
 @onready var dealer_hand: HBoxContainer = $Root/DealerArea/DealerHand
 @onready var player_hand: HBoxContainer = $Root/PlayerArea/PlayerHand
