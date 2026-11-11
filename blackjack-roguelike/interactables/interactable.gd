@@ -14,7 +14,7 @@ var interact: Callable = func():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	prompt.text = "[E] " + interact_name
+	prompt.text = "[F] " + interact_name
 	prompt.visible = false
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
