@@ -33,4 +33,5 @@ func _on_battle_finished(won: bool) -> void:
 		current_boss.on_defeated()
 	else:
 		current_boss.on_lost()
+		RunState.reset_run()
 	current_boss = null
