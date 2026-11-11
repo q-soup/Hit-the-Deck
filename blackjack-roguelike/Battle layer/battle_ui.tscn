@@ -2,6 +2,45 @@
 
 [ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
 
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
+resource_name = "conotinue"
+button_index = 10
+pressed = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_seuhl"]
+device = -1
+pressed = true
+keycode = 70
+unicode = 102
+
+[sub_resource type="Shortcut" id="Shortcut_5vw27"]
+events = [SubResource("InputEventJoypadButton_seuhl"), SubResource("InputEventKey_seuhl")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_lquwl"]
+resource_name = "hit"
+
+[sub_resource type="InputEventKey" id="InputEventKey_sw1gg"]
+device = -1
+pressed = true
+keycode = 69
+unicode = 101
+
+[sub_resource type="Shortcut" id="Shortcut_1bvp3"]
+events = [SubResource("InputEventJoypadButton_lquwl"), SubResource("InputEventKey_sw1gg")]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_sw1gg"]
+resource_name = "stand"
+button_index = 3
+
+[sub_resource type="InputEventKey" id="InputEventKey_qhm6w"]
+device = -1
+pressed = true
+keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_7mycd"]
+events = [SubResource("InputEventJoypadButton_sw1gg"), SubResource("InputEventKey_qhm6w")]
+
 [node name="BattleUI" type="CanvasLayer" unique_id=818283804]
 script = ExtResource("1_3hth4")
 
@@ -34,6 +73,7 @@ offset_top = -15.5
 offset_bottom = 15.5
 grow_horizontal = 0
 grow_vertical = 2
+shortcut = SubResource("Shortcut_5vw27")
 text = "Continue"
 
 [node name="DealerArea" type="VBoxContainer" parent="Root" unique_id=833353480]
@@ -89,10 +129,12 @@ grow_vertical = 0
 
 [node name="HitButton" type="Button" parent="Root/Buttons" unique_id=1744066681]
 layout_mode = 2
+shortcut = SubResource("Shortcut_1bvp3")
 text = "Hit"
 
 [node name="StandButton" type="Button" parent="Root/Buttons" unique_id=368909203]
 layout_mode = 2
+shortcut = SubResource("Shortcut_7mycd")
 text = "Stand"
 
 [node name="ResultLabel" type="Label" parent="Root" unique_id=2009543090]
