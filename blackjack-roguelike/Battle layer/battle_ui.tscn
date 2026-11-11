@@ -9,9 +9,7 @@ pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_seuhl"]
 device = -1
-pressed = true
-keycode = 70
-unicode = 102
+keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_5vw27"]
 events = [SubResource("InputEventJoypadButton_seuhl"), SubResource("InputEventKey_seuhl")]
