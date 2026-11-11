@@ -33,5 +33,5 @@ func _on_battle_finished(won: bool) -> void:
 		current_boss.on_defeated()
 	else:
 		current_boss.on_lost()
-		RunState.reset_run()
+		RunState.reset_run() #player was getting stuck at 0 hp after loss
 	current_boss = null
