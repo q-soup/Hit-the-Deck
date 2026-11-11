@@ -64,16 +64,16 @@ func _on_round_ended(result: String, message: String) -> void:
 func refresh_ui() -> void:
 	battle_ui.clear_hands()
 	for card in game.player_hand:
-		battle_ui.add_card(false, pretty(card))
+		battle_ui.add_card(false, card)
 	for i in game.dealer_hand.size():
 		# Dealer's second card stays face down until the round is over
 		var hidden: bool = (i == 1 and not game.round_over)
-		battle_ui.add_card(true, pretty(game.dealer_hand[i]), hidden)
+		battle_ui.add_card(true, game.dealer_hand[i], hidden)
 	battle_ui.set_hp(RunState.hp, boss_hp)
 
-# Turns "KH" into "K♥"
-func pretty(card: String) -> String:
+# unused - Turns "KH" into "K♥" 
+"""func pretty(card: String) -> String:
 	var rank: String = card.substr(0, card.length() - 1)
 	var suit: String = card.substr(card.length() - 1)
 	var symbols := {"H": "♥", "D": "♦", "C": "♣", "S": "♠"}
-	return rank + symbols[suit]
+	return rank + symbols[suit]"""

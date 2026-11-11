@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://x3jr17nufw4m"]
+
+[ext_resource type="Script" uid="uid://fs0eu5h5u8s6" path="res://Battle layer/cards.gd" id="1_3mr3v"]
+
+[node name="Cards" type="TextureRect" unique_id=1651165767]
+custom_minimum_size = Vector2(74, 104)
+offset_right = 80.0
+offset_bottom = 120.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_3mr3v")
