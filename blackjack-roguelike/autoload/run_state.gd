@@ -3,8 +3,26 @@ extends Node
 signal hp_changed(hp, max_hp)
 # Notifies other parts of the game when the player's money changes.
 signal money_changed(money)
+signal pause_toggled(is_paused: bool)
 
 const START_HP = 100
+enum State {PLAYING, PAUSED, GAME_OVER}
+var current_state: State = State.PLAYING
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("pause"):
+		if current_state == State.PLAYING:
+			set_paused(true)
+		elif current_state == State.PAUSED:
+			set_paused(false)
+			
+func set_paused(paused: bool):
+	current_state = State.PAUSED if paused else State.PLAYING
+	get_tree().paused = paused
+	pause_toggled.emit(paused)
 
 var max_hp = START_HP
 var hp = START_HP

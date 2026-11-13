@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://dxv2kul4ln58e"]
+
+[ext_resource type="Script" uid="uid://bgxtmcojsqk5u" path="res://paused/paused.gd" id="1_hpm32"]
+[ext_resource type="Texture2D" uid="uid://ciuy3g40j43yy" path="res://art/shop items/icons/deco_lifebouy_2.png" id="2_8ia43"]
+[ext_resource type="Texture2D" uid="uid://dqlqay52nwkpe" path="res://art/Poker cards 1.3/fiches addon (Poker Cards).png" id="3_hfujg"]
+[ext_resource type="Texture2D" uid="uid://bo5ejpdp4m3pd" path="res://art/cards/Joker_2.png" id="4_urj3o"]
+[ext_resource type="Texture2D" uid="uid://dwn0sxei5tu67" path="res://art/drinks/cocktails1/Single PNG/cocktail_1.png" id="5_onsmm"]
+[ext_resource type="Texture2D" uid="uid://xtksd4bhbnrq" path="res://player/animations/adventurer_default_walk_s_06.png" id="6_nd8nj"]
+[ext_resource type="Texture2D" uid="uid://bf1x4t2inablx" path="res://art/drinks/cocktails1/Single PNG/cocktail_2.png" id="7_0yknh"]
+
+[node name="paused" type="CanvasLayer" unique_id=346561133]
+process_mode = 2
+layer = 10
+script = ExtResource("1_hpm32")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=542516435]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11372549, 0.84705883, 0.9607843, 0.3882353)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=601468212]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 39.0
+offset_right = 316.0
+offset_bottom = 62.0
+scale = Vector2(2, 2)
+text = "Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1455457072]
+offset_left = 246.0
+offset_top = 116.0
+offset_right = 316.0
+offset_bottom = 215.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 5
+
+[node name="resume" type="Button" parent="VBoxContainer" unique_id=1066242150]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 9
+text = "Resume"
+
+[node name="controls" type="Button" parent="VBoxContainer" unique_id=351757277]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 9
+text = "Controls"
+
+[node name="restart" type="Button" parent="VBoxContainer" unique_id=1399373169]
+layout_mode = 2
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 9
+text = "Restart"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=653009268]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.1254902, 0.24705882, 1)
+theme_override_constants/align_to_largest_stylebox = 0
+theme_override_font_sizes/font_size = 9
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1529913968]
+offset_left = 82.0
+offset_top = 77.0
+offset_right = 187.0
+offset_bottom = 183.0
+texture = ExtResource("2_8ia43")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1300993723]
+position = Vector2(197, 247)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=739872515]
+position = Vector2(171, 243)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=415713114]
+position = Vector2(176, 256)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1231162432]
+position = Vector2(436, 143)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=570425027]
+position = Vector2(451, 127)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=984761905]
+position = Vector2(430, 123)
+texture = ExtResource("3_hfujg")
+hframes = 9
+vframes = 3
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=727196923]
+position = Vector2(617, 236)
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=1415099084]
+position = Vector2(509, 341)
+rotation = 1.5707964
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=906967253]
+position = Vector2(27, 53)
+rotation = -3.1415927
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=295583116]
+position = Vector2(27, 237)
+rotation = -3.1415927
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=583655725]
+position = Vector2(120, 342)
+rotation = 1.5707964
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1380849573]
+position = Vector2(312, 342)
+rotation = 1.5707964
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D13" type="Sprite2D" parent="." unique_id=318313812]
+position = Vector2(140, 17)
+rotation = -1.5707964
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D14" type="Sprite2D" parent="." unique_id=1199767707]
+position = Vector2(318.00003, 17)
+rotation = -1.5707964
+scale = Vector2(1, 0.9532526)
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D15" type="Sprite2D" parent="." unique_id=695403832]
+position = Vector2(494, 15)
+rotation = -1.5707964
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="Sprite2D16" type="Sprite2D" parent="." unique_id=834743683]
+position = Vector2(621, 37)
+texture = ExtResource("3_hfujg")
+hframes = 10
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=986930197]
+offset_left = 496.0
+offset_top = 194.0
+offset_right = 560.0
+offset_bottom = 280.0
+texture = ExtResource("4_urj3o")
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=1723555003]
+offset_left = 374.0
+offset_top = 44.0
+offset_right = 414.0
+offset_bottom = 84.0
+texture = ExtResource("5_onsmm")
+
+[node name="TextureRect7" type="TextureRect" parent="." unique_id=1672388886]
+offset_left = 88.0
+offset_top = 75.0
+offset_right = 187.0
+offset_bottom = 170.0
+texture = ExtResource("6_nd8nj")
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=975598393]
+visibility_layer = 128
+offset_left = 146.00002
+offset_top = 120.00001
+offset_right = 178.00002
+offset_bottom = 152.0
+rotation = 0.20245819
+texture = ExtResource("7_0yknh")
