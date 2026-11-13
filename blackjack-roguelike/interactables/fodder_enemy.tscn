@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cglr1040a6ch1"]
+
+[ext_resource type="Script" uid="uid://hd14ru46laml" path="res://interactables/fodder_enemy.gd" id="1_0ei2f"]
+[ext_resource type="Texture2D" uid="uid://dlswkq7qv023p" path="res://art/gangster-pixel-character-sprite-sheets-pack/Gangsters_3/Idle.png" id="1_21413"]
+[ext_resource type="PackedScene" uid="uid://c3fjincv3ril0" path="res://interactables/interactable.tscn" id="3_sfeiv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfeiv"]
+atlas = ExtResource("1_21413")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss00p"]
+atlas = ExtResource("1_21413")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yam6j"]
+atlas = ExtResource("1_21413")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shgy5"]
+atlas = ExtResource("1_21413")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0cqp"]
+atlas = ExtResource("1_21413")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4m0y"]
+atlas = ExtResource("1_21413")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r18ts"]
+atlas = ExtResource("1_21413")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d235m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfeiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ss00p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yam6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shgy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0cqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4m0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r18ts")
+}],
+"loop": 1,
+"name": &"fodder1_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lquwl"]
+radius = 13.0
+height = 56.0
+
+[node name="Fodder Enemy" type="CharacterBody2D" unique_id=343721663]
+script = ExtResource("1_0ei2f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2031453566]
+position = Vector2(24, 41)
+scale = Vector2(0.6953125, 0.6875)
+sprite_frames = SubResource("SpriteFrames_d235m")
+animation = &"fodder1_idle"
+autoplay = "fodder1_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=118276536]
+position = Vector2(20, 63)
+shape = SubResource("CapsuleShape2D_lquwl")
+
+[node name="Interactable" parent="." unique_id=1726701162 instance=ExtResource("3_sfeiv")]
+position = Vector2(30, 61)
+scale = Vector2(2, 2)
+collision_layer = 1
+collision_mask = 1
+
+[node name="InteractionPrompt" parent="Interactable" index="1" unique_id=96949777]
+offset_left = -1.5
+offset_top = -14.5
+offset_right = 72.5
+offset_bottom = -0.5
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 10
+
+[editable path="Interactable"]

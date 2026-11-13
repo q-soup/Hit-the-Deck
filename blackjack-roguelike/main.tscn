@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b2krhgfyf4pjr" path="res://floors/casino/floor_1_casino.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ciaox5cqqxsdc" path="res://player/player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dunrk3fnnd8ng" path="res://interactables/boss.tscn" id="3_boss1"]
+[ext_resource type="PackedScene" uid="uid://cglr1040a6ch1" path="res://interactables/fodder_enemy.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c6vdon4aye3ax" path="res://interactables/fodder_enemy_2.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node" unique_id=627307981]
 process_mode = 3
@@ -28,3 +30,9 @@ limit_bottom = 480
 [node name="Boss" parent="Floor1Casino" unique_id=1651596049 instance=ExtResource("3_boss1")]
 position = Vector2(641, 201)
 scale = Vector2(0.6, 0.6)
+
+[node name="Fodder Enemy" parent="Floor1Casino" unique_id=343721663 instance=ExtResource("5_lquwl")]
+position = Vector2(12, 259)
+
+[node name="fodder_enemy2" parent="Floor1Casino" unique_id=514260522 instance=ExtResource("6_7mycd")]
+position = Vector2(389, 0)

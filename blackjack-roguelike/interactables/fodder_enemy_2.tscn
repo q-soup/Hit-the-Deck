@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://c6vdon4aye3ax"]
+
+[ext_resource type="Texture2D" uid="uid://da7c13jxxktw0" path="res://art/gangster-pixel-character-sprite-sheets-pack/Gangsters_1/Idle.png" id="1_jjmhh"]
+[ext_resource type="Script" uid="uid://hd14ru46laml" path="res://interactables/fodder_enemy.gd" id="1_nn3nl"]
+[ext_resource type="PackedScene" uid="uid://c3fjincv3ril0" path="res://interactables/interactable.tscn" id="2_tm18m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gspl6"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5kwx"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oef7"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtyjm"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ut7q"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0f6t"]
+atlas = ExtResource("1_jjmhh")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d235m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gspl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5kwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oef7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtyjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ut7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0f6t")
+}],
+"loop": 1,
+"name": &"fodder_animation2",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxepy"]
+radius = 15.0
+height = 52.0
+
+[node name="fodder_enemy2" type="CharacterBody2D" unique_id=514260522]
+script = ExtResource("1_nn3nl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=615938808]
+position = Vector2(122, 144)
+scale = Vector2(0.53124994, 0.640625)
+sprite_frames = SubResource("SpriteFrames_d235m")
+animation = &"fodder_animation2"
+autoplay = "fodder_animation2"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=189719619]
+position = Vector2(123, 163)
+shape = SubResource("CapsuleShape2D_vxepy")
+
+[node name="Interactable" parent="." unique_id=1726701162 instance=ExtResource("2_tm18m")]
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=1035421220]
+position = Vector2(109, 163)
+scale = Vector2(2, 2)
+
+[node name="InteractionPrompt" parent="Interactable" index="1" unique_id=96949777]
+offset_left = 97.0
+offset_top = 138.0
+offset_right = 163.0
+offset_bottom = 161.0
+scale = Vector2(0.3, 0.3)
+
+[editable path="Interactable"]
