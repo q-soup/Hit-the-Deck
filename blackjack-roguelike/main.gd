@@ -14,7 +14,9 @@ func _ready() -> void:
 
 	for boss in get_tree().get_nodes_in_group("boss"):
 		boss.battle_requested.connect(start_battle)
-
+		
+	for fodder_enemy in get_tree().get_nodes_in_group("fodder_enemy"):
+		fodder_enemy.battle_requested.connect(start_battle)
 func start_battle(boss) -> void:
 	if battle != null:
 		return
