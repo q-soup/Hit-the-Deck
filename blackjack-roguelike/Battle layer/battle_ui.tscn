@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iopyi216775v"]
 
 [ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
+[ext_resource type="Theme" uid="uid://cgmqgsuykmjt1" path="res://art/ui/battle_theme.tres" id="2_sw1gg"]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
 resource_name = "conotinue"
@@ -50,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_sw1gg")
 
 [node name="Dim" type="ColorRect" parent="Root" unique_id=1903613328]
 layout_mode = 1
