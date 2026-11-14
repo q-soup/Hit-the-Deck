@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 var defeated := false
+@export var max_hp := 20 #set per enemy in the inspector
+@export var damage := 5
 signal battle_requested(fodder_enemy)
 
 
