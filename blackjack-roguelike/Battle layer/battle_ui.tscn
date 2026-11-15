@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
 [ext_resource type="Theme" uid="uid://cgmqgsuykmjt1" path="res://art/ui/battle_theme.tres" id="2_sw1gg"]
+[ext_resource type="Texture2D" uid="uid://b8x1kjslg6mn1" path="res://art/cards/Deck of cards ( full cards ).png" id="3_qhm6w"]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
 resource_name = "conotinue"
@@ -41,6 +42,10 @@ unicode = 113
 [sub_resource type="Shortcut" id="Shortcut_7mycd"]
 events = [SubResource("InputEventJoypadButton_sw1gg"), SubResource("InputEventKey_qhm6w")]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhm6w"]
+atlas = ExtResource("3_qhm6w")
+region = Rect2(49, 215, 49, 73)
+
 [node name="BattleUI" type="CanvasLayer" unique_id=818283804]
 script = ExtResource("1_3hth4")
 
@@ -53,14 +58,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_sw1gg")
 
-[node name="Dim" type="ColorRect" parent="Root" unique_id=1903613328]
+[node name="TheGreen" type="ColorRect" parent="Root" unique_id=1903613328]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.043137256, 0.4, 0.13725491, 1)
+color = Color(0.05490196, 0.36078432, 0.15686275, 1)
 
 [node name="NextRoundButton" type="Button" parent="Root" unique_id=1355021604]
 layout_mode = 1
@@ -93,6 +98,7 @@ text = "Dealer"
 
 [node name="DealerHand" type="HBoxContainer" parent="Root/DealerArea" unique_id=1209924921]
 layout_mode = 2
+theme_override_constants/separation = 4
 
 [node name="PlayerArea" type="VBoxContainer" parent="Root" unique_id=1608838138]
 layout_mode = 1
@@ -115,6 +121,7 @@ vertical_alignment = 2
 
 [node name="PlayerHand" type="HBoxContainer" parent="Root/PlayerArea" unique_id=968605345]
 layout_mode = 2
+theme_override_constants/separation = 4
 
 [node name="Buttons" type="HBoxContainer" parent="Root" unique_id=610131597]
 layout_mode = 1
@@ -158,3 +165,20 @@ offset_left = 24.0
 offset_top = 328.0
 offset_right = 72.0
 offset_bottom = 351.0
+
+[node name="TextureRect" type="TextureRect" parent="Root" unique_id=942361099]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 154.0
+texture = SubResource("AtlasTexture_qhm6w")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="Root/TextureRect" unique_id=243062284]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 153.0
+offset_right = 70.0
+offset_bottom = 167.0
+horizontal_alignment = 1
