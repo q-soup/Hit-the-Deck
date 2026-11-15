@@ -23,6 +23,8 @@ func start_battle(boss) -> void:
 	current_boss = boss
 	get_tree().paused = true
 	battle = BATTLE_SCENE.instantiate()
+	battle.boss_max_hp = boss.max_hp #have to pass in enemy stats
+	battle.boss_damage = boss.damage
 	battle_layer.add_child(battle)
 	battle.finished.connect(_on_battle_finished)
 
