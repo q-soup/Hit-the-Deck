@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bg6gdvx6mcvh0"]
+
+[ext_resource type="Script" path="res://Battle layer/card_place_holder.gd" id="1_740ld"]
+
+[node name="CardPlaceHolder" type="PanelContainer" unique_id=2526339]
+custom_minimum_size = Vector2(80, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_740ld")
+
+[node name="Label" type="Label" parent="." unique_id=1094045476]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "As"
