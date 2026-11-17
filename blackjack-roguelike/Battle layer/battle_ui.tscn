@@ -292,4 +292,4 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1o2db")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t13lo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kbxkl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_k4bry")
-text = "Wager?"
+text = "Bet?"
