@@ -10,6 +10,7 @@ var battle_ui
 @export var boss_max_hp = 50
 @export var player_damage = 10
 @export var boss_damage = 10
+@export var boss_portrait: Texture2D
 var boss_hp: int
 
 func _ready() -> void:
@@ -23,6 +24,7 @@ func start_battle() -> void:
 	battle_ui.stand_pressed.connect(_on_stand_pressed)
 	battle_ui.next_round_pressed.connect(_on_next_round_pressed)
 	game.round_ended.connect(_on_round_ended)
+	battle_ui.set_portrait(boss_portrait)
 	
 	boss_hp = boss_max_hp
 	
@@ -56,6 +58,7 @@ func _on_round_ended(result: String, message: String) -> void:
 	elif RunState.hp == 0:
 		message = "You lost..."
 		
+	battle_ui.react(result)
 	battle_ui.show_result(message)
 	battle_ui.set_buttons_enabled(false)
 	refresh_ui()

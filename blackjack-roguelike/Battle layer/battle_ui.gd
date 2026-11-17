@@ -9,6 +9,14 @@ const CARD_SCENE: PackedScene = preload("res://Battle layer/cards.tscn")
 @onready var result_label: Label = $Root/ResultLabel
 @onready var next_round_button: Button = $Root/NextRoundButton
 @onready var hp_label: Label = $Root/HPLabel
+@onready var portrait: AnimatedSprite2D = $Root/BossPanel/Portrait
+
+const ANIMS = {
+	"idle": {"frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3], "fps": 6, "loop": true},
+	"talk": {"frames": [4, 5, 6, 7, 8, 9], "fps": 8, "loop": true}, #for taunts/dialogue later (in battle and out of it)
+	"nod": {"frames": [10, 11, 12, 12, 13, 14, 15, 15, 16, 17, 18, 19], "fps": 7, "loop": false},
+	"shake": {"frames": [20, 21, 22, 23, 23, 22, 21, 20, 21, 22, 23, 23, 22, 21, 20], "fps": 9, "loop": false},
+}
 
 signal hit_pressed
 signal stand_pressed
@@ -20,6 +28,7 @@ func _ready() -> void:
 	next_round_button.pressed.connect(func(): next_round_pressed.emit())
 	result_label.hide()
 	next_round_button.hide()
+	portrait.animation_finished.connect(func(): portrait.play("idle")) #back to idle after a reaction
 	#add_card(true, "K♥")	
 	#add_card(false, "A♠")
 	#print("dealer cards: ", dealer_hand.get_child_count(), " player cards: ", player_hand.get_child_count())
@@ -49,3 +58,24 @@ func reset_for_new_round() -> void:
 	
 func set_hp(player_hp: int, boss_hp: int):
 	hp_label.text = "You: %d    Boss: %d" % [player_hp, boss_hp]
+
+func set_portrait(sheet: Texture2D) -> void:
+	var sf := SpriteFrames.new()
+	sf.remove_animation("default")
+	for anim in ANIMS:
+		sf.add_animation(anim)
+		sf.set_animation_speed(anim, ANIMS[anim].fps)
+		sf.set_animation_loop(anim, ANIMS[anim].loop)
+		for i in ANIMS[anim].frames:
+			var atlas := AtlasTexture.new()
+			atlas.atlas = sheet
+			atlas.region = Rect2((i % 10) * 64, floori(i / 10.0) * 64, 64, 64) #column, row on the sheet
+			sf.add_frame(anim, atlas)
+	portrait.sprite_frames = sf
+	portrait.play("idle")
+
+func react(result: String) -> void:
+	if result == "win": 
+		portrait.play("shake")
+	elif result == "lose":
+		portrait.play("nod")

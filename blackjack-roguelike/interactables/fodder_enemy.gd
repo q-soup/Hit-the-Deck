@@ -4,6 +4,7 @@ extends CharacterBody2D
 var defeated := false
 @export var max_hp := 20 #set per enemy in the inspector
 @export var damage := 5
+@export var portrait: Texture2D
 signal battle_requested(fodder_enemy)
 
 
