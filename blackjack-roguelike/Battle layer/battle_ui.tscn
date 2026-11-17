@@ -49,6 +49,14 @@ events = [SubResource("InputEventJoypadButton_sw1gg"), SubResource("InputEventKe
 atlas = ExtResource("3_qhm6w")
 region = Rect2(49, 215, 49, 73)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pof"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(672, 266, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkld5"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(672, 490, 32, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sc8wt"]
 atlas = ExtResource("5_a2hso")
 region = Rect2(48, 48, 32, 48)
@@ -244,10 +252,39 @@ patch_margin_top = 14
 patch_margin_right = 14
 patch_margin_bottom = 14
 
+[node name="ColorRect" type="ColorRect" parent="Root/BossPanel/Frame" unique_id=467475813]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 72.0
+color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+
 [node name="Portrait" type="AnimatedSprite2D" parent="Root/BossPanel" unique_id=1057002097]
-position = Vector2(590, 50)
+position = Vector2(587, 54)
 scale = Vector2(1.2, 1.2)
 flip_h = true
+
+[node name="Name" type="Label" parent="Root/BossPanel" unique_id=1158017051]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 88.0
+offset_right = 638.0
+offset_bottom = 102.0
+horizontal_alignment = 2
+
+[node name="HPBar" type="TextureProgressBar" parent="Root/BossPanel" unique_id=458047010]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 18.0
+offset_right = 545.0
+offset_bottom = 34.0
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_right = 6
+texture_under = SubResource("AtlasTexture_p6pof")
+texture_progress = SubResource("AtlasTexture_dkld5")
 
 [node name="Wager" type="Control" parent="Root" unique_id=82640498]
 anchors_preset = 0
