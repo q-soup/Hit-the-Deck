@@ -57,6 +57,10 @@ region = Rect2(672, 266, 32, 16)
 atlas = ExtResource("4_3lxov")
 region = Rect2(672, 490, 32, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cahr0"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(328, 324, 18, 26)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_sc8wt"]
 atlas = ExtResource("5_a2hso")
 region = Rect2(48, 48, 32, 48)
@@ -136,19 +140,39 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.5
-offset_top = 40.0
-offset_right = 24.5
-offset_bottom = 58.0
+offset_left = -36.0
+offset_top = 19.0
+offset_right = 20.0
+offset_bottom = 37.0
 grow_horizontal = 2
-
-[node name="Label" type="Label" parent="Root/DealerArea" unique_id=1461854292]
-layout_mode = 2
-text = "Dealer"
 
 [node name="DealerHand" type="HBoxContainer" parent="Root/DealerArea" unique_id=1209924921]
 layout_mode = 2
 theme_override_constants/separation = 4
+
+[node name="DealerTotal" type="NinePatchRect" parent="Root" unique_id=495636907]
+custom_minimum_size = Vector2(40, 24)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 88.0
+offset_right = 342.0
+offset_bottom = 112.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(490, 964, 44, 22)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="Root/DealerTotal" unique_id=957359113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerArea" type="VBoxContainer" parent="Root" unique_id=1608838138]
 layout_mode = 1
@@ -157,22 +181,40 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -24.5
-offset_top = -84.0
-offset_right = 24.5
-offset_bottom = -44.0
+offset_left = -36.0
+offset_top = -86.0
+offset_right = 20.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Label" type="Label" parent="Root/PlayerArea" unique_id=564853968]
-layout_mode = 2
-text = "Player"
-horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="PlayerHand" type="HBoxContainer" parent="Root/PlayerArea" unique_id=968605345]
 layout_mode = 2
 theme_override_constants/separation = 4
+
+[node name="PlayerTotal" type="NinePatchRect" parent="Root" unique_id=2070306709]
+custom_minimum_size = Vector2(40, 24)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 196.0
+offset_right = 342.0
+offset_bottom = 220.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(490, 964, 44, 22)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="Root/PlayerTotal" unique_id=1066987761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Buttons" type="HBoxContainer" parent="Root" unique_id=610131597]
 layout_mode = 1
@@ -195,20 +237,6 @@ text = "Hit"
 layout_mode = 2
 shortcut = SubResource("Shortcut_7mycd")
 text = "Stand"
-
-[node name="ResultLabel" type="Label" parent="Root" unique_id=2009543090]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="HPLabel" type="Label" parent="Root" unique_id=1927742664]
 layout_mode = 0
@@ -286,6 +314,29 @@ stretch_margin_right = 6
 texture_under = SubResource("AtlasTexture_p6pof")
 texture_progress = SubResource("AtlasTexture_dkld5")
 
+[node name="DmgIcon" type="TextureRect" parent="Root/BossPanel" unique_id=1899632604]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 41.0
+offset_right = 561.0
+offset_bottom = 83.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_cahr0")
+
+[node name="Dmg" type="Label" parent="Root/BossPanel" unique_id=1101856598]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 41.0
+offset_right = 528.0
+offset_bottom = 55.0
+
+[node name="HP" type="Label" parent="Root/BossPanel" unique_id=1148788721]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 19.0
+offset_right = 432.0
+offset_bottom = 33.0
+
 [node name="Wager" type="Control" parent="Root" unique_id=82640498]
 anchors_preset = 0
 offset_right = 40.0
@@ -332,3 +383,27 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_t13lo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kbxkl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_k4bry")
 text = "Bet?"
+
+[node name="Banner" type="NinePatchRect" parent="Root" unique_id=434638825]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 135.0
+offset_right = 417.0
+offset_bottom = 173.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(2, 418, 90, 36)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="Label" parent="Root/Banner" unique_id=2017173203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
