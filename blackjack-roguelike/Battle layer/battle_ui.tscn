@@ -238,13 +238,6 @@ layout_mode = 2
 shortcut = SubResource("Shortcut_7mycd")
 text = "Stand"
 
-[node name="HPLabel" type="Label" parent="Root" unique_id=1927742664]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 328.0
-offset_right = 72.0
-offset_bottom = 351.0
-
 [node name="Deck" type="TextureRect" parent="Root" unique_id=942361099]
 layout_mode = 0
 offset_left = 40.0
@@ -407,3 +400,54 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlayerPanel" type="Control" parent="Root" unique_id=11687026]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="NinePatchRect" parent="Root/PlayerPanel" unique_id=1830669904]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 270.0
+offset_right = 90.0
+offset_bottom = 350.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(116, 258, 56, 58)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="ColorRect" type="ColorRect" parent="Root/PlayerPanel/Frame" unique_id=1497409688]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 72.0
+color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="Root/PlayerPanel" unique_id=1979476967]
+position = Vector2(55, 315)
+scale = Vector2(1.2, 1.2)
+flip_h = true
+
+[node name="HPBar" type="TextureProgressBar" parent="Root/PlayerPanel" unique_id=1019339803]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 275.0
+offset_right = 205.0
+offset_bottom = 291.0
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_right = 6
+texture_under = SubResource("AtlasTexture_p6pof")
+texture_progress = SubResource("AtlasTexture_dkld5")
+
+[node name="HP" type="Label" parent="Root/PlayerPanel" unique_id=1888008575]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 278.0
+offset_right = 250.0
+offset_bottom = 292.0
