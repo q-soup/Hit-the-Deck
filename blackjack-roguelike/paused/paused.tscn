@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.11372549, 0.84705883, 0.9607843, 0.3882353)
+color = Color(0.11372549, 0.84705883, 0.9607843, 0.6156863)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=601468212]
 layout_mode = 0
@@ -30,7 +30,14 @@ offset_bottom = 62.0
 scale = Vector2(2, 2)
 text = "Paused"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1455457072]
+[node name="Control" type="Control" parent="." unique_id=685652117]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1455457072]
+layout_mode = 0
 offset_left = 246.0
 offset_top = 116.0
 offset_right = 316.0
@@ -38,25 +45,25 @@ offset_bottom = 215.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 5
 
-[node name="resume" type="Button" parent="VBoxContainer" unique_id=1066242150]
+[node name="resume" type="Button" parent="Control/VBoxContainer" unique_id=1066242150]
 layout_mode = 2
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_font_sizes/font_size = 9
 text = "Resume"
 
-[node name="controls" type="Button" parent="VBoxContainer" unique_id=351757277]
+[node name="controls" type="Button" parent="Control/VBoxContainer" unique_id=351757277]
 layout_mode = 2
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_font_sizes/font_size = 9
 text = "Controls"
 
-[node name="restart" type="Button" parent="VBoxContainer" unique_id=1399373169]
+[node name="restart" type="Button" parent="Control/VBoxContainer" unique_id=1399373169]
 layout_mode = 2
 theme_override_constants/align_to_largest_stylebox = 0
 theme_override_font_sizes/font_size = 9
 text = "Restart"
 
-[node name="quit" type="Button" parent="VBoxContainer" unique_id=653009268]
+[node name="quit" type="Button" parent="Control/VBoxContainer" unique_id=653009268]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.9098039, 0.1254902, 0.24705882, 1)
 theme_override_constants/align_to_largest_stylebox = 0
@@ -194,3 +201,5 @@ offset_right = 178.00002
 offset_bottom = 152.0
 rotation = 0.20245819
 texture = ExtResource("7_0yknh")
+
+[connection signal="pressed" from="Control/VBoxContainer/resume" to="." method="_on_resume_button_pressed"]

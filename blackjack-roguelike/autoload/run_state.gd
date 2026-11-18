@@ -12,12 +12,13 @@ var current_state: State = State.PLAYING
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	if event.is_action_pressed("pause"):
 		if current_state == State.PLAYING:
 			set_paused(true)
 		elif current_state == State.PAUSED:
 			set_paused(false)
+		get_viewport().set_input_as_handled()
 			
 func set_paused(paused: bool):
 	current_state = State.PAUSED if paused else State.PLAYING
