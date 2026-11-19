@@ -203,3 +203,4 @@ rotation = 0.20245819
 texture = ExtResource("7_0yknh")
 
 [connection signal="pressed" from="Control/VBoxContainer/resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/controls" to="." method="_on_controls_button_pressed"]
