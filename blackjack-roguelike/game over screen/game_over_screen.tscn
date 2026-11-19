@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://beh6hjqt7com"]
+
+[ext_resource type="Script" uid="uid://uhaws0c1jfni" path="res://game over screen/game_over_screen.gd" id="1_d11js"]
+[ext_resource type="Texture2D" uid="uid://gej3s0ge2y2b" path="res://art/New Piskel (1).png" id="2_4wt7d"]
+[ext_resource type="Texture2D" uid="uid://b4wej72o1sg1x" path="res://player/animations/adventurer_default_walk_sw_02.png" id="3_0hqw1"]
+[ext_resource type="Texture2D" uid="uid://cq843uq71r7qh" path="res://art/New Piskel (2).png" id="4_rrqy6"]
+
+[node name="GameOverScreen" type="CanvasLayer" unique_id=1629872602]
+script = ExtResource("1_d11js")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=877565511]
+offset_right = 643.0
+offset_bottom = 359.0
+color = Color(0.12041847, 0.12041845, 0.12041845, 1)
+
+[node name="Label" type="Label" parent="." unique_id=980053091]
+offset_left = 2.0
+offset_top = 28.999998
+offset_right = 185.14284
+offset_bottom = 45.571426
+scale = Vector2(3.5, 3.5)
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=473409612]
+offset_left = 272.0
+offset_top = 304.0
+offset_right = 361.0
+offset_bottom = 335.0
+text = "Try Again"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1563157305]
+position = Vector2(105.00001, 85.00001)
+rotation = -3.1520646
+scale = Vector2(13.049991, 10.550003)
+texture = ExtResource("2_4wt7d")
+region_enabled = true
+region_rect = Rect2(9.779747, 7.679712, 5.514866, 5.6515985)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428767721]
+position = Vector2(100, 55.999985)
+rotation = -1.5707964
+scale = Vector2(4.09375, 3.46875)
+texture = ExtResource("3_0hqw1")
+
+[node name="Label2" type="Label" parent="." unique_id=1991777915]
+offset_left = 246.00002
+offset_top = 120.00001
+offset_right = 340.0
+offset_bottom = 200.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 8
+text = "Money Earned:
+Hands Won: 
+Dealers beat: 
+"
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1176497848]
+position = Vector2(561, 65)
+scale = Vector2(8.09375, 9.34375)
+texture = ExtResource("4_rrqy6")
+region_enabled = true
+region_rect = Rect2(11.532944, 9.459301, 9.799141, 8.158356)
+
+[connection signal="pressed" from="Button" to="." method="_on_try_again_pressed"]

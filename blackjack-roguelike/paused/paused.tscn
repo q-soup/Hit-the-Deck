@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://bgxtmcojsqk5u" path="res://paused/paused.gd" id="1_hpm32"]
 [ext_resource type="Texture2D" uid="uid://ciuy3g40j43yy" path="res://art/shop items/icons/deco_lifebouy_2.png" id="2_8ia43"]
 [ext_resource type="Texture2D" uid="uid://dqlqay52nwkpe" path="res://art/Poker cards 1.3/fiches addon (Poker Cards).png" id="3_hfujg"]
-[ext_resource type="Texture2D" uid="uid://bo5ejpdp4m3pd" path="res://art/cards/Joker_2.png" id="4_urj3o"]
 [ext_resource type="Texture2D" uid="uid://dwn0sxei5tu67" path="res://art/drinks/cocktails1/Single PNG/cocktail_1.png" id="5_onsmm"]
 [ext_resource type="Texture2D" uid="uid://xtksd4bhbnrq" path="res://player/animations/adventurer_default_walk_s_06.png" id="6_nd8nj"]
 [ext_resource type="Texture2D" uid="uid://bf1x4t2inablx" path="res://art/drinks/cocktails1/Single PNG/cocktail_2.png" id="7_0yknh"]
+[ext_resource type="Texture2D" uid="uid://br05lwrced5nm" path="res://art/Poker cards 1.3/1.2 Poker cards.png" id="7_hpm32"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d235m"]
 bg_color = Color(4.933402e-07, 0.37682417, 0.13169166, 1)
@@ -208,13 +208,6 @@ position = Vector2(621, 37)
 texture = ExtResource("3_hfujg")
 hframes = 10
 
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=986930197]
-offset_left = 496.0
-offset_top = 194.0
-offset_right = 560.0
-offset_bottom = 280.0
-texture = ExtResource("4_urj3o")
-
 [node name="TextureRect6" type="TextureRect" parent="." unique_id=1723555003]
 offset_left = 374.0
 offset_top = 44.0
@@ -287,6 +280,13 @@ offset_transform_enabled = true
 theme_override_colors/font_color = Color(0.9254902, 0.16470589, 0.08235294, 1)
 theme_override_colors/font_hover_color = Color(0.9254902, 0.16470589, 0.08235294, 1)
 text = "No"
+
+[node name="Sprite2D17" type="Sprite2D" parent="." unique_id=224676481]
+position = Vector2(509, 237.00002)
+scale = Vector2(1.4565215, 1.5483868)
+texture = ExtResource("7_hpm32")
+region_enabled = true
+region_rect = Rect2(672.36035, 0.18632126, 46.780823, 62.566113)
 
 [connection signal="pressed" from="Control/VBoxContainer/resume" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/controls" to="." method="_on_controls_button_pressed"]
