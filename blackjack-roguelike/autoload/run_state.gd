@@ -12,6 +12,7 @@ var money: int = 0
 var deck: Array = [] #will change once someone finishes the card resource
 var beaten_bosses: Array[String] = []
 var flags: Array[String] = []
+var upgrades: Array[String] = []
 
 func reset_run():
 	max_hp = START_HP
@@ -55,3 +56,12 @@ func spend_money(cost: int) -> bool:
 	money -= cost
 	money_changed.emit(money)
 	return true
+	
+func add_upgrade(upgrade_name: String) -> void:
+	upgrades.append(upgrade_name)
+
+func has_upgrade(upgrade_name: String) -> bool:
+	return upgrade_name in upgrades
+
+func count_upgrade(upgrade_name: String) -> int:
+	return upgrades.count(upgrade_name)
