@@ -1,19 +1,45 @@
 [gd_scene format=3 uid="uid://iopyi216775v"]
 
 [ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
+[ext_resource type="Theme" uid="uid://cgmqgsuykmjt1" path="res://art/ui/battle_theme.tres" id="2_sw1gg"]
+[ext_resource type="Texture2D" uid="uid://b8x1kjslg6mn1" path="res://art/cards/Deck of cards ( full cards ).png" id="3_qhm6w"]
+[ext_resource type="Texture2D" uid="uid://cx6cffjwu3th4" path="res://art/ui/ui_sheet.png" id="4_3lxov"]
+[ext_resource type="Texture2D" uid="uid://2p2jnrgs7fnb" path="res://art/cards/fiches addon (Poker Cards).png" id="5_a2hso"]
+[ext_resource type="Texture2D" uid="uid://1xcsak0apymu" path="res://art/ui/bet_button.tres" id="6_l23rs"]
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
-resource_name = "conotinue"
-button_index = 10
-pressed = true
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0pwlh"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(554, 868, 44, 22)
 
-[sub_resource type="InputEventKey" id="InputEventKey_seuhl"]
-device = -1
-keycode = 32
-unicode = 32
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8fd0j"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(490, 868, 44, 22)
 
-[sub_resource type="Shortcut" id="Shortcut_5vw27"]
-events = [SubResource("InputEventJoypadButton_seuhl"), SubResource("InputEventKey_seuhl")]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0roqb"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(554, 868, 44, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojlel"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(490, 836, 44, 22)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uj42"]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_lquwl"]
 resource_name = "hit"
@@ -26,6 +52,40 @@ unicode = 101
 
 [sub_resource type="Shortcut" id="Shortcut_1bvp3"]
 events = [SubResource("InputEventJoypadButton_lquwl"), SubResource("InputEventKey_sw1gg")]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc8wt"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(554, 900, 44, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwu2r"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(490, 900, 44, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qn6av"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(554, 900, 44, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3c63w"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(490, 836, 44, 22)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbfbi"]
 
 [sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_sw1gg"]
 resource_name = "stand"
@@ -40,6 +100,107 @@ unicode = 113
 [sub_resource type="Shortcut" id="Shortcut_7mycd"]
 events = [SubResource("InputEventJoypadButton_sw1gg"), SubResource("InputEventKey_qhm6w")]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cahr0"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(792, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_daymo"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(920, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_roa52"]
+texture = ExtResource("4_3lxov")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(792, 2, 48, 28)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkede"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
+resource_name = "conotinue"
+button_index = 10
+pressed = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_seuhl"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_5vw27"]
+events = [SubResource("InputEventJoypadButton_seuhl"), SubResource("InputEventKey_seuhl")]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhm6w"]
+atlas = ExtResource("3_qhm6w")
+region = Rect2(49, 215, 49, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pof"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(672, 266, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkld5"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(672, 490, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cahr0"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(328, 324, 18, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbfbi"]
+atlas = ExtResource("4_3lxov")
+region = Rect2(432, 320, 32, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc8wt"]
+atlas = ExtResource("5_a2hso")
+region = Rect2(48, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwu2r"]
+atlas = ExtResource("5_a2hso")
+region = Rect2(144, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn6av"]
+atlas = ExtResource("5_a2hso")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1o2db"]
+texture = ExtResource("6_l23rs")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1112, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t13lo"]
+texture = ExtResource("6_l23rs")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1240, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbxkl"]
+texture = ExtResource("6_l23rs")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1112, 2, 48, 28)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k4bry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c63w"]
+atlas = ExtResource("5_a2hso")
+region = Rect2(0, 66, 32, 30)
+
 [node name="BattleUI" type="CanvasLayer" unique_id=818283804]
 script = ExtResource("1_3hth4")
 
@@ -50,47 +211,55 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_sw1gg")
 
-[node name="Dim" type="ColorRect" parent="Root" unique_id=1903613328]
+[node name="TheGreen" type="ColorRect" parent="Root" unique_id=1903613328]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.043137256, 0.4, 0.13725491, 1)
-
-[node name="NextRoundButton" type="Button" parent="Root" unique_id=1355021604]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -15.5
-offset_bottom = 15.5
-grow_horizontal = 0
-grow_vertical = 2
-shortcut = SubResource("Shortcut_5vw27")
-text = "Continue"
+color = Color(0.05490196, 0.36078432, 0.15686275, 1)
 
 [node name="DealerArea" type="VBoxContainer" parent="Root" unique_id=833353480]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.5
-offset_right = 24.5
-offset_bottom = 18.0
+offset_left = -36.0
+offset_top = 5.0
+offset_right = 20.0
+offset_bottom = 23.0
 grow_horizontal = 2
-
-[node name="Label" type="Label" parent="Root/DealerArea" unique_id=1461854292]
-layout_mode = 2
-text = "Dealer"
 
 [node name="DealerHand" type="HBoxContainer" parent="Root/DealerArea" unique_id=1209924921]
 layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="DealerTotal" type="NinePatchRect" parent="Root" unique_id=495636907]
+custom_minimum_size = Vector2(40, 24)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 135.0
+offset_right = 342.0
+offset_bottom = 159.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(490, 964, 44, 22)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="Root/DealerTotal" unique_id=957359113]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerArea" type="VBoxContainer" parent="Root" unique_id=1608838138]
 layout_mode = 1
@@ -99,60 +268,423 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -24.5
-offset_top = -40.0
-offset_right = 24.5
+offset_left = -3.0
+offset_top = -21.0
+offset_right = 53.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="Root/PlayerArea" unique_id=564853968]
-layout_mode = 2
-text = "Player"
-horizontal_alignment = 1
-vertical_alignment = 2
-
 [node name="PlayerHand" type="HBoxContainer" parent="Root/PlayerArea" unique_id=968605345]
 layout_mode = 2
+theme_override_constants/separation = 4
 
-[node name="Buttons" type="HBoxContainer" parent="Root" unique_id=610131597]
+[node name="PlayerTotal" type="NinePatchRect" parent="Root" unique_id=2070306709]
+custom_minimum_size = Vector2(40, 24)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 197.0
+offset_right = 342.0
+offset_bottom = 221.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(490, 964, 44, 22)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="Root/PlayerTotal" unique_id=1066987761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Root" unique_id=1524582824]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -113.0
+offset_top = -135.0
+offset_right = -9.0
+offset_bottom = -71.0
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="HitButton" type="Button" parent="Root/Buttons" unique_id=1744066681]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_0pwlh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8fd0j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0roqb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ojlel")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7uj42")
 shortcut = SubResource("Shortcut_1bvp3")
 text = "Hit"
 
 [node name="StandButton" type="Button" parent="Root/Buttons" unique_id=368909203]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_sc8wt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uwu2r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qn6av")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_3c63w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lbfbi")
 shortcut = SubResource("Shortcut_7mycd")
 text = "Stand"
 
-[node name="ResultLabel" type="Label" parent="Root" unique_id=2009543090]
+[node name="NextRoundButton" type="Button" parent="Root" unique_id=1355021604]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 150.0
+offset_right = 628.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_cahr0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_daymo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_roa52")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tkede")
+shortcut = SubResource("Shortcut_5vw27")
+text = "Continue"
+
+[node name="␣Hint" type="NinePatchRect" parent="Root/NextRoundButton" unique_id=2059843654]
+layout_mode = 0
+offset_left = -25.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = 24.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(554, 836, 44, 22)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="␣" type="Label" parent="Root/NextRoundButton/␣Hint" unique_id=113171314]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -8.0
+offset_right = 1.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+text = "␣"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HPLabel" type="Label" parent="Root" unique_id=1927742664]
+[node name="EHint" type="NinePatchRect" parent="Root" unique_id=208391068]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 328.0
-offset_right = 72.0
-offset_bottom = 351.0
+offset_left = 500.0
+offset_top = 229.0
+offset_right = 522.0
+offset_bottom = 249.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(554, 836, 44, 22)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="E" type="Label" parent="Root/EHint" unique_id=750328046]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QHint" type="NinePatchRect" parent="Root" unique_id=1222036207]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 265.0
+offset_right = 522.0
+offset_bottom = 285.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(554, 836, 44, 22)
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Q" type="Label" parent="Root/QHint" unique_id=261592836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+text = "Q
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Deck" type="TextureRect" parent="Root" unique_id=942361099]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 118.0
+offset_bottom = 154.0
+texture = SubResource("AtlasTexture_qhm6w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Count" type="Label" parent="Root/Deck" unique_id=243062284]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 150.0
+offset_right = 65.0
+offset_bottom = 164.0
+horizontal_alignment = 1
+
+[node name="BossPanel" type="Control" parent="Root" unique_id=1539931175]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="NinePatchRect" parent="Root/BossPanel" unique_id=1419871449]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 10.0
+offset_right = 630.0
+offset_bottom = 90.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(116, 258, 56, 58)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="ColorRect" type="ColorRect" parent="Root/BossPanel/Frame" unique_id=467475813]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 72.0
+color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="Root/BossPanel" unique_id=1057002097]
+position = Vector2(587, 54)
+scale = Vector2(1.2, 1.2)
+flip_h = true
+
+[node name="Name" type="Label" parent="Root/BossPanel" unique_id=1158017051]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 91.0
+offset_right = 626.0
+offset_bottom = 105.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPBar" type="TextureProgressBar" parent="Root/BossPanel" unique_id=458047010]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 21.0
+offset_right = 521.0
+offset_bottom = 37.0
+fill_mode = 1
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_right = 6
+texture_under = SubResource("AtlasTexture_p6pof")
+texture_progress = SubResource("AtlasTexture_dkld5")
+
+[node name="DmgIcon" type="TextureRect" parent="Root/BossPanel" unique_id=1899632604]
+layout_mode = 0
+offset_left = 532.0
+offset_top = 53.0
+offset_right = 564.0
+offset_bottom = 95.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_cahr0")
+
+[node name="Dmg" type="Label" parent="Root/BossPanel" unique_id=1101856598]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 55.0
+offset_right = 557.0
+offset_bottom = 69.0
+
+[node name="HPText" type="Label" parent="Root/BossPanel" unique_id=1148788721]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 23.0
+offset_right = 492.0
+offset_bottom = 37.0
+
+[node name="Heart" type="TextureRect" parent="Root/BossPanel" unique_id=964341844]
+layout_mode = 0
+offset_left = 527.00006
+offset_top = 19.0
+offset_right = 559.00006
+offset_bottom = 49.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_lbfbi")
+
+[node name="Wager" type="Control" parent="Root" unique_id=82640498]
+anchors_preset = 0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 60.0
+
+[node name="Chip1" type="TextureRect" parent="Root/Wager" unique_id=330492679]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 168.0
+offset_right = 58.0
+offset_bottom = 216.0
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AtlasTexture_sc8wt")
+
+[node name="Chip3" type="TextureRect" parent="Root/Wager" unique_id=1818440377]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 168.0
+offset_right = 103.0
+offset_bottom = 216.0
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AtlasTexture_uwu2r")
+
+[node name="Chip2" type="TextureRect" parent="Root/Wager" unique_id=1780026263]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 175.0
+offset_right = 78.0
+offset_bottom = 223.0
+scale = Vector2(1.1, 1.1)
+texture = SubResource("AtlasTexture_qn6av")
+
+[node name="BetButton" type="Button" parent="Root/Wager" unique_id=626654257]
+custom_minimum_size = Vector2(20, 28)
+layout_mode = 0
+offset_left = 37.0
+offset_top = 195.0
+offset_right = 97.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_colors/font_pressed_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1o2db")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t13lo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kbxkl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k4bry")
+text = "Bet?"
+
+[node name="Banner" type="NinePatchRect" parent="Root" unique_id=434638825]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 160.0
+offset_right = 417.0
+offset_bottom = 198.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(2, 418, 90, 36)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Label" type="Label" parent="Root/Banner" unique_id=2017173203]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerPanel" type="Control" parent="Root" unique_id=11687026]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Frame" type="NinePatchRect" parent="Root/PlayerPanel" unique_id=1830669904]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 270.0
+offset_right = 90.0
+offset_bottom = 350.0
+texture = ExtResource("4_3lxov")
+region_rect = Rect2(116, 258, 56, 58)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="ColorRect" type="ColorRect" parent="Root/PlayerPanel/Frame" unique_id=1497409688]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 72.0
+color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+
+[node name="Portrait" type="AnimatedSprite2D" parent="Root/PlayerPanel" unique_id=1979476967]
+position = Vector2(55, 315)
+scale = Vector2(1.2, 1.2)
+
+[node name="HPBar" type="TextureProgressBar" parent="Root/PlayerPanel" unique_id=1019339803]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 281.0
+offset_right = 229.0
+offset_bottom = 297.0
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_right = 6
+texture_under = SubResource("AtlasTexture_p6pof")
+texture_progress = SubResource("AtlasTexture_dkld5")
+
+[node name="HPText" type="Label" parent="Root/PlayerPanel" unique_id=1888008575]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 283.0
+offset_right = 193.0
+offset_bottom = 297.0
+
+[node name="Heart" type="TextureRect" parent="Root/PlayerPanel" unique_id=1284223659]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 278.00003
+offset_right = 124.0
+offset_bottom = 308.00003
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_lbfbi")
+
+[node name="ChipIcon" type="TextureRect" parent="Root/PlayerPanel" unique_id=1096412680]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 312.0
+offset_right = 125.0
+offset_bottom = 342.0
+scale = Vector2(0.7, 0.7)
+texture = SubResource("AtlasTexture_3c63w")
+
+[node name="Money" type="Label" parent="Root/PlayerPanel" unique_id=1731464875]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 316.0
+offset_right = 160.0
+offset_bottom = 330.0

@@ -39,6 +39,11 @@ folder_colors={
 "res://Battle layer/": "purple"
 }
 
+[gui]
+
+theme/custom="uid://cgmqgsuykmjt1"
+theme/custom_font="uid://3ra5mx7gsk88"
+
 [input]
 
 move_left={

@@ -4,6 +4,7 @@ signal battle_requested(boss)
 var defeated := false
 @export var max_hp := 50 #set per enemy in the inspector
 @export var damage := 10
+@export var portrait: Texture2D
 
 func _ready():
 	add_to_group("boss")
