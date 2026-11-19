@@ -11,6 +11,7 @@ var battle_ui
 @export var player_damage = 10
 @export var boss_damage = 10
 @export var boss_portrait: Texture2D
+@export var boss_name := "Boss"
 var boss_hp: int
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func start_battle() -> void:
 	battle_ui.next_round_pressed.connect(_on_next_round_pressed)
 	game.round_ended.connect(_on_round_ended)
 	battle_ui.set_portrait(boss_portrait)
+	battle_ui.set_boss_info(boss_name, boss_max_hp, boss_damage)
 	
 	boss_hp = boss_max_hp
 	
@@ -73,6 +75,11 @@ func refresh_ui() -> void:
 		var hidden: bool = (i == 1 and not game.round_over)
 		battle_ui.add_card(true, game.dealer_hand[i], hidden)
 	battle_ui.set_hp(RunState.hp, boss_hp)
+	var dealer_shown: Array[String] = [game.dealer_hand[0]] #only count the face up card till the round ends
+	if game.round_over:
+		dealer_shown = game.dealer_hand
+	battle_ui.set_totals(game.hand_value(dealer_shown), game.hand_value(game.player_hand))
+	battle_ui.set_deck_count(game.deck.size())
 
 # unused - Turns "KH" into "K♥" 
 """func pretty(card: String) -> String:

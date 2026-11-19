@@ -19,6 +19,9 @@ const CARD_SCENE: PackedScene = preload("res://Battle layer/cards.tscn")
 @onready var player_total: Label = $Root/PlayerTotal/Label
 @onready var banner_label: Label = $Root/Banner/Label
 @onready var deck_count: Label = $Root/Deck/Count
+@onready var player_portrait: AnimatedSprite2D = $Root/PlayerPanel/Portrait
+
+const PLAYER_SHEET = preload("res://art/portraits/player.png")
 
 const ANIMS = {
 	"idle": {"frames": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3], "fps": 6, "loop": true},
@@ -26,6 +29,13 @@ const ANIMS = {
 	"nod": {"frames": [10, 11, 12, 12, 13, 14, 15, 15, 16, 17, 18, 19], "fps": 7, "loop": false},
 	"shake": {"frames": [20, 21, 22, 23, 23, 22, 21, 20, 21, 22, 23, 23, 22, 21, 20], "fps": 9, "loop": false},
 }
+
+const CARD_W := 96
+const GAP := 4 #space between cards when theres room
+@onready var e_hint: NinePatchRect = $Root/EHint
+@onready var deck: TextureRect = $Root/Deck
+
+const MARGIN := 6 #little buffer so cards dont touch stuff
 
 signal hit_pressed
 signal stand_pressed
@@ -39,18 +49,24 @@ func _ready() -> void:
 	money_label.text = "%d chips" % RunState.money
 	next_round_button.hide()
 	portrait.animation_finished.connect(func(): portrait.play("idle")) #back to idle after a reaction
-	#add_card(true, "K♥")	
-	#add_card(false, "A♠")
-	#print("dealer cards: ", dealer_hand.get_child_count(), " player cards: ", player_hand.get_child_count())
+	player_portrait.sprite_frames = build_frames(PLAYER_SHEET)
+	player_portrait.play("idle")
+	player_portrait.animation_finished.connect(func(): player_portrait.play("idle"))
 
 func add_card(to_dealer: bool, text: String, face_down := false) -> void:
 	var card = CARD_SCENE.instantiate()
 	(dealer_hand if to_dealer else player_hand).add_child(card)
 	card.set_card(text, face_down)
+	fit_hand(dealer_hand, deck.get_global_rect().end.x, boss_bar.get_global_rect().position.x)
+	fit_hand(player_hand, player_bar.get_global_rect().end.x, e_hint.get_global_rect().position.x)
 
 func clear_hands() -> void:
-	for c in dealer_hand.get_children(): c.queue_free()
-	for c in player_hand.get_children(): c.queue_free()
+	for c in dealer_hand.get_children():
+		dealer_hand.remove_child(c) #queue_free waits a frame so old cards were still counting
+		c.queue_free()
+	for c in player_hand.get_children():
+		player_hand.remove_child(c)
+		c.queue_free()
 
 func show_result(text: String) -> void:
 	banner_label.text = text
@@ -79,7 +95,7 @@ func set_hp(player_hp: int, boss_hp: int) -> void:
 	create_tween().tween_property(player_bar, "value", player_hp, 0.3)
 	create_tween().tween_property(boss_bar, "value", boss_hp, 0.3)
 
-func set_portrait(sheet: Texture2D) -> void:
+func build_frames(sheet: Texture2D) -> SpriteFrames:
 	var sf := SpriteFrames.new()
 	sf.remove_animation("default")
 	for anim in ANIMS:
@@ -91,7 +107,11 @@ func set_portrait(sheet: Texture2D) -> void:
 			atlas.atlas = sheet
 			atlas.region = Rect2((i % 10) * 64, floori(i / 10.0) * 64, 64, 64) #column, row on the sheet
 			sf.add_frame(anim, atlas)
-	portrait.sprite_frames = sf
+	return sf
+
+func set_portrait(sheet: Texture2D) -> void:
+	portrait.sprite_frames = build_frames(sheet)
+	portrait.flip_h = true #boss faces the table
 	portrait.play("idle")
 
 func set_totals(dealer: int, player: int) -> void:
@@ -102,7 +122,18 @@ func set_deck_count(n: int) -> void:
 	deck_count.text = "%d left" % n
 
 func react(result: String) -> void:
-	if result == "win": 
+	if result == "win":
 		portrait.play("shake")
+		player_portrait.play("nod") #happy bc i won
 	elif result == "lose":
 		portrait.play("nod")
+		player_portrait.play("shake")
+
+func fit_hand(hand: HBoxContainer, left_limit: float, right_limit: float) -> void:
+	var n := hand.get_child_count()
+	var center : float = hand.get_parent().get_global_rect().get_center().x #hands grow out from the middle
+	var max_w := 2.0 * minf(center - left_limit, right_limit - center) - 2 * MARGIN #closer side decides
+	var sep := GAP
+	if n > 1 and n * CARD_W + (n - 1) * GAP > max_w:
+		sep = floori((max_w - n * CARD_W) / (n - 1)) #only overlaps once theyd actually hit something
+	hand.add_theme_constant_override("separation", sep)
