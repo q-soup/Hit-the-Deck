@@ -23,6 +23,7 @@ func start_battle(boss) -> void:
 	current_boss = boss
 	get_tree().paused = true
 	battle = BATTLE_SCENE.instantiate()
+	battle.dealer = boss.dealer
 	battle.boss_max_hp = boss.max_hp #have to pass in enemy stats
 	battle.boss_damage = boss.damage
 	battle.boss_portrait = boss.portrait
@@ -40,3 +41,7 @@ func _on_battle_finished(won: bool) -> void:
 		current_boss.on_lost()
 		RunState.reset_run() #player was getting stuck at 0 hp after loss
 	current_boss = null
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_F1:
+		RunState.earn_money(100)   # TEMP: testing only

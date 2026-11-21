@@ -6,7 +6,12 @@ var defeated := false
 @export var damage := 10
 @export var portrait: Texture2D
 
+var level := 1
+var dealer: DealerData
+
 func _ready():
+	level = DealerData.roll_level_for_floor(RunState.current_floor)
+	dealer = DealerData.create(level)
 	add_to_group("boss")
 	$Interactable.interact_name = "Fight Boss"
 	$Interactable.interacted.connect(interact)

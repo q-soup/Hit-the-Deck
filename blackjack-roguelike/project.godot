@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+UpgradeDB="*uid://bhqjb33ol4s8k"
 RunState="*uid://25s8t4kxpdvm"
 Events="*uid://d0atvn5boc4ha"
 

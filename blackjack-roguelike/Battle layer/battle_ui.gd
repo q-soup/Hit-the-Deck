@@ -20,6 +20,7 @@ const CARD_SCENE: PackedScene = preload("res://Battle layer/cards.tscn")
 @onready var banner_label: Label = $Root/Banner/Label
 @onready var deck_count: Label = $Root/Deck/Count
 @onready var player_portrait: AnimatedSprite2D = $Root/PlayerPanel/Portrait
+@onready var dealer_items_box: VBoxContainer = $Root/DealerItems
 
 const PLAYER_SHEET = preload("res://art/portraits/player.png")
 
@@ -137,3 +138,20 @@ func fit_hand(hand: HBoxContainer, left_limit: float, right_limit: float) -> voi
 	if n > 1 and n * CARD_W + (n - 1) * GAP > max_w:
 		sep = floori((max_w - n * CARD_W) / (n - 1)) #only overlaps once theyd actually hit something
 	hand.add_theme_constant_override("separation", sep)
+
+func set_dealer_items(ids: Array) -> void:
+	for c in dealer_items_box.get_children():
+		c.queue_free()
+	var title := Label.new()
+	title.text = "Dealer's items"
+	dealer_items_box.add_child(title)
+	if ids.is_empty():
+		var none := Label.new()
+		none.text = "None"
+		dealer_items_box.add_child(none)
+		return
+	for id in ids:
+		var item: Dictionary = UpgradeDB.ITEMS[id]
+		var row := Label.new()
+		row.text = "[%s] %s: %s" % [UpgradeDB.QUALITY_NAME[item.quality], item.name, item.desc]
+		dealer_items_box.add_child(row)
