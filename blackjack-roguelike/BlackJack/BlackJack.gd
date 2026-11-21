@@ -8,6 +8,8 @@ var player_hand: Array[String] = []
 var dealer_hand: Array[String] = []
 var round_over := false
 var outcome := ""
+var target := 21
+var dealer_stand := 17
 
 signal round_ended(result: String, message: String)
 
@@ -42,7 +44,7 @@ func hand_value(hand: Array[String]) -> int:
 		if card.begins_with("A"):
 			aces += 1
 
-	while total > 21 and aces > 0:
+	while total > target and aces > 0:
 		total -= 10
 		aces -= 1
 	return total
@@ -55,7 +57,7 @@ func is_soft(hand: Array[String]) -> bool:
 		if card.begins_with("A"):
 			aces += 1
 
-	while total > 21 and aces > 0:
+	while total > target and aces > 0:
 		total -= 10
 		aces -= 1
 
@@ -63,6 +65,8 @@ func is_soft(hand: Array[String]) -> bool:
 	return aces > 0
 
 func start_round() -> void:
+	target = RunState.stats.target
+	dealer_stand = RunState.stats.dealer_stand
 	outcome = ""
 	build_deck()
 	player_hand.clear()
@@ -77,7 +81,7 @@ func start_round() -> void:
 	print("Player: ", player_hand, " = ", hand_value(player_hand))
 	print("Dealer shows: ", dealer_hand[0])
 
-	if hand_value(player_hand) == 21:
+	if hand_value(player_hand) == target:
 		stand()  
 
 
@@ -86,7 +90,7 @@ func hit() -> void:
 		return
 	player_hand.append(draw_card())
 	print("Player: ", player_hand, " = ", hand_value(player_hand))
-	if hand_value(player_hand) > 21:
+	if hand_value(player_hand) > target:
 		end_round("lose", "Bust! Dealer wins.")
 
 
@@ -94,14 +98,14 @@ func stand() -> void:
 	if round_over:
 		return
 
-	while hand_value(dealer_hand) < 17 or (hand_value(dealer_hand) == 17 and is_soft(dealer_hand)):
+	while hand_value(dealer_hand) < dealer_stand or (hand_value(dealer_hand) == dealer_stand and is_soft(dealer_hand)):
 		dealer_hand.append(draw_card())
 
 	var p := hand_value(player_hand)
 	var d := hand_value(dealer_hand)
 	print("Dealer: ", dealer_hand, " = ", d)
 
-	if d > 21 or p > d:
+	if d > target or p > d:
 		end_round("win", "You win!")
 	elif p == d:
 		end_round("push", "Push (tie).")

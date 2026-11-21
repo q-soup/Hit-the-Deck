@@ -688,3 +688,10 @@ offset_left = 120.0
 offset_top = 316.0
 offset_right = 160.0
 offset_bottom = 330.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root" unique_id=708606226]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 94.0
+offset_right = 630.0
+offset_bottom = 134.0

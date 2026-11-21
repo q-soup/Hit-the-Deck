@@ -36,6 +36,8 @@ limit_bottom = 480
 [node name="Boss" parent="Floor1Casino" unique_id=1651596049 instance=ExtResource("3_boss1")]
 position = Vector2(641, 201)
 scale = Vector2(0.6, 0.6)
+max_hp = null
+damage = null
 portrait = ExtResource("5_272bh")
 
 [node name="Fodder Enemy" parent="Floor1Casino" unique_id=343721663 instance=ExtResource("5_lquwl")]

@@ -4,13 +4,18 @@ signal hp_changed(hp, max_hp)
 # Notifies other parts of the game when the player's money changes.
 signal money_changed(money)
 signal pause_toggled(is_paused: bool)
+signal inventory_changed
 
 const START_HP = 100
 enum State {PLAYING, PAUSED, GAME_OVER}
+var inventory: Array[String] = []
+var stats: Dictionary = {}
 var current_state: State = State.PLAYING
+var current_floor := 1
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_recalc()
 	
 func _input(event: InputEvent):
 	if event.is_action_pressed("pause"):
@@ -31,14 +36,16 @@ var money: int = 0
 var deck: Array = [] #will change once someone finishes the card resource
 var beaten_bosses: Array[String] = []
 var flags: Array[String] = []
-var upgrades: Array[String] = []
 
 func reset_run():
 	max_hp = START_HP
 	hp = max_hp
 	money = 0
+	inventory.clear()
+	_recalc()
 	deck.clear()
 	beaten_bosses.clear()
+	current_floor = 1
 	flags.clear()
 	hp_changed.emit(hp, max_hp)
 	money_changed.emit(money)
@@ -76,11 +83,37 @@ func spend_money(cost: int) -> bool:
 	money_changed.emit(money)
 	return true
 	
-func add_upgrade(upgrade_name: String) -> void:
-	upgrades.append(upgrade_name)
+	
+func _recalc() -> void:
+	stats = UpgradeDB.calc_stats(inventory)
+	inventory_changed.emit()
 
-func has_upgrade(upgrade_name: String) -> bool:
-	return upgrade_name in upgrades
+func add_item(id: String) -> void:
+	inventory.append(id)
+	_recalc()
 
-func count_upgrade(upgrade_name: String) -> int:
-	return upgrades.count(upgrade_name)
+func drink_count() -> int:
+	var n := 0
+	for id in inventory:
+		if UpgradeDB.ITEMS[id].kind == "drink":
+			n += 1
+	return n
+
+func drunk_points() -> int:
+	var total := 0
+	for id in inventory:
+		total += UpgradeDB.ITEMS[id].get("drunk_points", 0)
+	return total
+
+func can_add(id: String) -> bool:
+	if UpgradeDB.ITEMS[id].kind == "drink":
+		return drink_count() < stats.drink_slots
+	return true
+
+func drunk_level() -> String:      # placeholder thresholds, tune later
+	var p := drunk_points()
+	if p >= 10: return "Wasted"
+	if p >= 7: return "Drunk"
+	if p >= 5: return "Buzzed"
+	if p >= 2: return "Tipsy"
+	return "Sober"
