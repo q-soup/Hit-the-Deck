@@ -41,8 +41,9 @@ region_rect = Rect2(490, 836, 44, 22)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uj42"]
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_lquwl"]
-resource_name = "hit"
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_l23rs"]
+button_index = 3
+pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_sw1gg"]
 device = -1
@@ -51,7 +52,7 @@ keycode = 69
 unicode = 101
 
 [sub_resource type="Shortcut" id="Shortcut_1bvp3"]
-events = [SubResource("InputEventJoypadButton_lquwl"), SubResource("InputEventKey_sw1gg")]
+events = [SubResource("InputEventJoypadButton_l23rs"), SubResource("InputEventKey_sw1gg")]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc8wt"]
 texture = ExtResource("4_3lxov")
@@ -87,9 +88,8 @@ region_rect = Rect2(490, 836, 44, 22)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbfbi"]
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_sw1gg"]
-resource_name = "stand"
-button_index = 3
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ik16v"]
+pressed = true
 
 [sub_resource type="InputEventKey" id="InputEventKey_qhm6w"]
 device = -1
@@ -98,7 +98,7 @@ keycode = 81
 unicode = 113
 
 [sub_resource type="Shortcut" id="Shortcut_7mycd"]
-events = [SubResource("InputEventJoypadButton_sw1gg"), SubResource("InputEventKey_qhm6w")]
+events = [SubResource("InputEventJoypadButton_ik16v"), SubResource("InputEventKey_qhm6w")]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cahr0"]
 texture = ExtResource("4_3lxov")
