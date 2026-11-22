@@ -53,7 +53,7 @@ func reset_run():
 
 func take_damage(amount):
 	hp = max(hp - amount, 0)
-	hp_changed.emit(hp, max_hp)
+	hp_changed.emit(hp, total_max_hp())
 
 func has_flag(flag): #pass in a string
 	return flags.has(flag)
@@ -117,3 +117,6 @@ func drunk_level() -> String:      # placeholder thresholds, tune later
 	if p >= 5: return "Buzzed"
 	if p >= 2: return "Tipsy"
 	return "Sober"
+	
+func total_max_hp() -> int:
+	return max_hp + stats.max_hp #base hp plus whatever items add

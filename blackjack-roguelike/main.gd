@@ -23,7 +23,7 @@ func start_battle(boss) -> void:
 	current_boss = boss
 	get_tree().paused = true
 	battle = BATTLE_SCENE.instantiate()
-	battle.dealer = boss.dealer
+	battle.dealer = boss.get("dealer") #fodder doesnt have one so this is just null for them
 	battle.boss_max_hp = boss.max_hp #have to pass in enemy stats
 	battle.boss_damage = boss.damage
 	battle.boss_portrait = boss.portrait
