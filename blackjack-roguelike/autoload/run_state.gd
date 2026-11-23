@@ -26,6 +26,7 @@ func _input(event: InputEvent):
 		get_viewport().set_input_as_handled()
 			
 func set_paused(paused: bool):
+	if get_tree().current_scene.name != "Main": return #only pause during the actual game
 	current_state = State.PAUSED if paused else State.PLAYING
 	get_tree().paused = paused
 	pause_toggled.emit(paused)

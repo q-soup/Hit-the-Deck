@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b8x1kjslg6mn1" path="res://art/cards/Deck of cards ( full cards ).png" id="3_qhm6w"]
 [ext_resource type="Texture2D" uid="uid://cx6cffjwu3th4" path="res://art/ui/ui_sheet.png" id="4_3lxov"]
 [ext_resource type="Texture2D" uid="uid://2p2jnrgs7fnb" path="res://art/cards/fiches addon (Poker Cards).png" id="5_a2hso"]
-[ext_resource type="Texture2D" uid="uid://1xcsak0apymu" path="res://art/ui/bet_button.tres" id="6_l23rs"]
+[ext_resource type="StyleBox" uid="uid://bw3c6m0xidix6" path="res://art/ui/brass_button.tres" id="6_l23rs"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0pwlh"]
 texture = ExtResource("4_3lxov")
@@ -171,16 +171,8 @@ region = Rect2(144, 48, 32, 48)
 atlas = ExtResource("5_a2hso")
 region = Rect2(96, 48, 32, 48)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1o2db"]
-texture = ExtResource("6_l23rs")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
-region_rect = Rect2(1112, 2, 48, 28)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t13lo"]
-texture = ExtResource("6_l23rs")
+texture = ExtResource("4_3lxov")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
@@ -188,7 +180,7 @@ texture_margin_bottom = 8.0
 region_rect = Rect2(1240, 2, 48, 28)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kbxkl"]
-texture = ExtResource("6_l23rs")
+texture = ExtResource("4_3lxov")
 texture_margin_left = 8.0
 texture_margin_top = 8.0
 texture_margin_right = 8.0
@@ -582,7 +574,7 @@ offset_right = 97.0
 offset_bottom = 225.0
 theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
 theme_override_colors/font_pressed_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
-theme_override_styles/normal = SubResource("StyleBoxTexture_1o2db")
+theme_override_styles/normal = ExtResource("6_l23rs")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_t13lo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_kbxkl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_k4bry")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://elg6huerq38l"]
+
+[ext_resource type="Texture2D" uid="uid://da2vkrwty530f" path="res://art/ui/pennant.png" id="1_s17gd"]
+[ext_resource type="Script" uid="uid://dlqfehx5w5c56" path="res://title screen/pennant.gd" id="2_p1ojo"]
+
+[node name="Pennant" type="TextureRect" unique_id=1652943845]
+texture = ExtResource("1_s17gd")
+script = ExtResource("2_p1ojo")
+
+[node name="Suit" type="TextureRect" parent="." unique_id=255072442]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 12.0
+offset_bottom = 12.0
+expand_mode = 1
