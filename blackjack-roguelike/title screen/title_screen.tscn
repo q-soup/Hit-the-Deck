@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://bppfblefqn7gl"]
+
+[ext_resource type="Script" uid="uid://dk1agdg5mikwh" path="res://title screen/title_screen.gd" id="1_pbwqu"]
+[ext_resource type="Texture2D" uid="uid://b5kwto2nehdnc" path="res://art/ui/wave_back.png" id="1_v7nos"]
+[ext_resource type="Texture2D" uid="uid://bkob8tldi3d18" path="res://art/ui/sun.png" id="2_edjsg"]
+[ext_resource type="Script" uid="uid://yjso7tpn6go" path="res://title screen/wave.gd" id="2_nw4ox"]
+[ext_resource type="Texture2D" uid="uid://ckkm0s05gl0cy" path="res://art/ui/wave_mid.png" id="3_8uujd"]
+[ext_resource type="Texture2D" uid="uid://dt0xy1kl1h5ev" path="res://art/ui/wave_front.png" id="4_mmb60"]
+[ext_resource type="Texture2D" uid="uid://c2ebbn1dhpgji" path="res://art/ui/suit_spade.tres" id="5_8uujd"]
+[ext_resource type="PackedScene" uid="uid://elg6huerq38l" path="res://title screen/pennant.tscn" id="5_oud7o"]
+[ext_resource type="Texture2D" uid="uid://dl82vpme7pqd1" path="res://art/ui/suit_heart.tres" id="7_1xabm"]
+[ext_resource type="Texture2D" uid="uid://ckx60fk72de5y" path="res://art/ui/suit_diamond.tres" id="8_80f6r"]
+[ext_resource type="Texture2D" uid="uid://cojmfuecd4hum" path="res://art/ui/suit_club.tres" id="9_ca001"]
+[ext_resource type="Texture2D" uid="uid://xhmcqgi45y4i" path="res://art/cards/poker_cards.png" id="10_1xabm"]
+[ext_resource type="Texture2D" uid="uid://brkookw3egshj" path="res://art/ui/title_ship.png" id="11_80f6r"]
+[ext_resource type="Texture2D" uid="uid://cx6cffjwu3th4" path="res://art/ui/ui_sheet.png" id="12_ca001"]
+[ext_resource type="StyleBox" uid="uid://bp1b2oyjfgld" path="res://art/ui/silver_buttom.tres" id="12_ypgk5"]
+[ext_resource type="StyleBox" uid="uid://bw3c6m0xidix6" path="res://art/ui/brass_button.tres" id="14_pbwqu"]
+[ext_resource type="AudioStream" uid="uid://blsb1y58lby44" path="res://audio/foghorn.ogg" id="16_smo76"]
+
+[sub_resource type="Gradient" id="Gradient_34tav"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.18, 0.3301887, 0.34, 0.58, 0.65, 0.69)
+colors = PackedColorArray(0.101960786, 0.15686275, 0.34509805, 1, 0.18039216, 0.18431373, 0.41960785, 1, 0.29411766, 0.21960784, 0.47058824, 1, 0.49411765, 0.2627451, 0.50980395, 1, 0.7058824, 0.32156864, 0.4862745, 1, 0.8862745, 0.47843137, 0.36862746, 1, 0.9490196, 0.7019608, 0.36862746, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sc8wt"]
+gradient = SubResource("Gradient_34tav")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_v7nos"]
+offsets = PackedFloat32Array(0, 0, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s17gd"]
+particles_animation = true
+particles_anim_h_frames = 15
+particles_anim_v_frames = 5
+particles_anim_loop = false
+
+[sub_resource type="FontVariation" id="FontVariation_ypgk5"]
+spacing_space = -16
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xukw5"]
+texture = ExtResource("12_ca001")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1240, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edjsg"]
+texture = ExtResource("12_ca001")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1240, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_shey4"]
+texture = ExtResource("12_ca001")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1240, 2, 48, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a7ok2"]
+texture = ExtResource("12_ca001")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(1240, 2, 48, 28)
+
+[node name="TitleScreen" type="Control" unique_id=1449315770]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbwqu")
+
+[node name="Sky" type="TextureRect" parent="." unique_id=1295819199]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_sc8wt")
+expand_mode = 1
+
+[node name="Stars" type="CPUParticles2D" parent="." unique_id=1088260239]
+position = Vector2(320, 100)
+amount = 30
+lifetime = 7.0
+emission_shape = 3
+emission_rect_extents = Vector2(320, 100)
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_v7nos")
+
+[node name="Sun" type="TextureRect" parent="." unique_id=922839799]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 236.0
+offset_right = 523.0
+offset_bottom = 284.0
+texture = ExtResource("2_edjsg")
+
+[node name="WaveBack" type="TextureRect" parent="." unique_id=1058094150]
+layout_mode = 0
+offset_top = 250.0
+offset_right = 672.0
+offset_bottom = 360.0
+texture = ExtResource("1_v7nos")
+stretch_mode = 1
+script = ExtResource("2_nw4ox")
+speed = 6.0
+
+[node name="WaveMid" type="TextureRect" parent="." unique_id=780759290]
+layout_mode = 0
+offset_top = 270.0
+offset_right = 672.0
+offset_bottom = 380.0
+texture = ExtResource("3_8uujd")
+stretch_mode = 1
+script = ExtResource("2_nw4ox")
+
+[node name="WaveFront" type="TextureRect" parent="." unique_id=1954576834]
+layout_mode = 0
+offset_top = 295.0
+offset_right = 672.0
+offset_bottom = 405.0
+texture = ExtResource("4_mmb60")
+stretch_mode = 1
+script = ExtResource("2_nw4ox")
+speed = 16.0
+
+[node name="Rope" type="Line2D" parent="." unique_id=494000663]
+points = PackedVector2Array(0, 14, 160, 30, 320, 36, 480, 30, 640, 14)
+width = 1.0
+default_color = Color(0.83137256, 0.6666667, 0.28235295, 1)
+
+[node name="Flags" type="TextureRect" parent="." unique_id=1556512789]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pennant" parent="Flags" unique_id=1652943845 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 46.0
+offset_bottom = 38.0
+rotation = 0.10471976
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("5_8uujd")
+
+[node name="Pennant2" parent="Flags" unique_id=852208115 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 25.0
+offset_right = 116.0
+offset_bottom = 45.0
+rotation = 0.10471976
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("7_1xabm")
+
+[node name="Pennant3" parent="Flags" unique_id=735790929 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 31.0
+offset_right = 186.0
+offset_bottom = 51.0
+rotation = 0.034906585
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("8_80f6r")
+
+[node name="Pennant4" parent="Flags" unique_id=1986333706 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 33.0
+offset_right = 256.0
+offset_bottom = 53.0
+rotation = 0.034906585
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("9_ca001")
+
+[node name="Pennant5" parent="Flags" unique_id=933809561 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 36.0
+offset_right = 326.0
+offset_bottom = 56.0
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("5_8uujd")
+
+[node name="Pennant6" parent="Flags" unique_id=1732192711 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 33.0
+offset_right = 396.0
+offset_bottom = 53.0
+rotation = -0.034906585
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("7_1xabm")
+
+[node name="Pennant7" parent="Flags" unique_id=806817729 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 31.0
+offset_right = 466.0
+offset_bottom = 51.0
+rotation = -0.034906585
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("8_80f6r")
+
+[node name="Pennant8" parent="Flags" unique_id=701253739 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 25.0
+offset_right = 536.0
+offset_bottom = 45.0
+rotation = -0.10471976
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("9_ca001")
+
+[node name="Pennant9" parent="Flags" unique_id=800269524 instance=ExtResource("5_oud7o")]
+layout_mode = 0
+offset_left = 590.0
+offset_top = 18.0
+offset_right = 606.0
+offset_bottom = 38.0
+rotation = -0.10471976
+pivot_offset = Vector2(8, 0)
+suit = ExtResource("5_8uujd")
+
+[node name="FallingCards" type="CPUParticles2D" parent="." unique_id=2094156044]
+material = SubResource("CanvasItemMaterial_s17gd")
+position = Vector2(320, -40)
+amount = 10
+texture = ExtResource("10_1xabm")
+lifetime = 18.0
+preprocess = 18.0
+emission_shape = 3
+emission_rect_extents = Vector2(320, 1)
+direction = Vector2(0, 1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+angle_max = 360.0
+anim_offset_max = 1.0
+
+[node name="Logo" type="Control" parent="." unique_id=1460333492]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HitThe" type="Label" parent="Logo" unique_id=2027946233]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = 92.0
+offset_right = 114.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = SubResource("FontVariation_ypgk5")
+theme_override_font_sizes/font_size = 64
+text = "Hit The"
+
+[node name="Line2" type="Control" parent="Logo" unique_id=938363251]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -88.0
+offset_top = 124.0
+offset_right = 120.0
+offset_bottom = 206.0
+grow_horizontal = 2
+
+[node name="ShipHolder" type="Control" parent="Logo/Line2" unique_id=1701011921]
+z_index = 1
+custom_minimum_size = Vector2(45, 82)
+anchors_preset = 0
+offset_right = 45.0
+offset_bottom = 82.0
+
+[node name="Ship" type="TextureRect" parent="Logo/Line2/ShipHolder" unique_id=1035829904]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 48.0
+offset_bottom = 59.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("11_80f6r")
+stretch_mode = 2
+
+[node name="Eck" type="Label" parent="Logo/Line2" unique_id=890389187]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 47.0
+offset_top = 13.0
+offset_right = 131.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 64
+text = "eck"
+
+[node name="Bang" type="Label" parent="Logo/Line2" unique_id=835933166]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 13.0
+offset_right = 165.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_colors/font_outline_color = Color(0.101960786, 0.15686275, 0.34509805, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 64
+text = "!!"
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=92297627]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -22.5
+offset_top = 200.0
+offset_right = 22.5
+offset_bottom = 270.0
+grow_horizontal = 2
+theme_override_constants/separation = 8
+
+[node name="Start" type="Button" parent="Buttons" unique_id=1062465081]
+custom_minimum_size = Vector2(140, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_styles/normal = ExtResource("14_pbwqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xukw5")
+theme_override_styles/hover = ExtResource("12_ypgk5")
+theme_override_styles/focus = ExtResource("12_ypgk5")
+text = "Start"
+
+[node name="Controls" type="Button" parent="Buttons" unique_id=135629289]
+custom_minimum_size = Vector2(140, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_styles/normal = ExtResource("14_pbwqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_edjsg")
+theme_override_styles/hover = ExtResource("12_ypgk5")
+theme_override_styles/focus = ExtResource("12_ypgk5")
+text = "Controls"
+
+[node name="Credits" type="Button" parent="Buttons" unique_id=327337880]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_styles/normal = ExtResource("14_pbwqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_shey4")
+theme_override_styles/hover = ExtResource("12_ypgk5")
+theme_override_styles/focus = ExtResource("12_ypgk5")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Buttons" unique_id=1540392153]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.9647059, 0.8784314, 1)
+theme_override_styles/normal = ExtResource("14_pbwqu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a7ok2")
+theme_override_styles/hover = ExtResource("12_ypgk5")
+theme_override_styles/focus = ExtResource("12_ypgk5")
+text = "Quit"
+
+[node name="Version" type="Label" parent="." unique_id=2037123985]
+modulate = Color(1, 1, 1, 0.78431374)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -14.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(13, -325)
+text = "v1.0"
+
+[node name="Foghorn" type="AudioStreamPlayer" parent="." unique_id=504562432]
+stream = ExtResource("16_smo76")

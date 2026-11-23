@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bp1b2oyjfgld"]
+
+[ext_resource type="Texture2D" uid="uid://bygufuiyqfl0r" path="res://art/ui/silver_button.tres" id="1_ql72w"]
+
+[resource]
+texture = ExtResource("1_ql72w")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(792, 2, 48, 28)
