@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iopyi216775v"]
 
 [ext_resource type="Script" uid="uid://cnrenjeo6k55m" path="res://Battle layer/battle_ui.gd" id="1_3hth4"]
-[ext_resource type="Theme" uid="uid://cgmqgsuykmjt1" path="res://art/ui/battle_theme.tres" id="2_sw1gg"]
+[ext_resource type="Theme" uid="uid://cgmqgsuykmjt1" path="res://art/ui/game_theme.tres" id="2_sw1gg"]
 [ext_resource type="Texture2D" uid="uid://b8x1kjslg6mn1" path="res://art/cards/Deck of cards ( full cards ).png" id="3_qhm6w"]
 [ext_resource type="Texture2D" uid="uid://cx6cffjwu3th4" path="res://art/ui/ui_sheet.png" id="4_3lxov"]
 [ext_resource type="Texture2D" uid="uid://2p2jnrgs7fnb" path="res://art/cards/fiches addon (Poker Cards).png" id="5_a2hso"]
