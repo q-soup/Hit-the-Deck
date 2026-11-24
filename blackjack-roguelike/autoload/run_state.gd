@@ -16,6 +16,10 @@ var current_floor := 1
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_recalc()
+	Input.set_custom_mouse_cursor(load("res://art/ui/cursor_hand.png"), Input.CURSOR_POINTING_HAND, Vector2(3, 1)) #fingertip
+	get_tree().node_added.connect(func(n): #every button gets the hand, even ones made later
+		if n is BaseButton:
+			n.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND)
 	
 func _input(event: InputEvent):
 	if event.is_action_pressed("pause"):
