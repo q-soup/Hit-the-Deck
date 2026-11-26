@@ -1,8 +1,8 @@
 extends Node
 
-const QUALITY_WEIGHT := {1: 60, 2: 25, 3: 10, 4: 5}
-const QUALITY_NAME := {1: "Common", 2: "Uncommon", 3: "Rare", 4: "Legendary"}
-const PRICE_BY_QUALITY := {1: 5, 2: 10, 3: 20, 4: 40}
+const RARITY_WEIGHT := {1: 60, 2: 25, 3: 10, }
+const RARITY_NAME := {1: "Common", 2: "Rare", 3: "Legendary"}
+const PRICE_BY_RARITY := {1: 5, 2: 20, 3: 40}
 
 const BASE_STATS := {
 	"damage_mult": 1.0, "damage_flat": 0, "chips_mult": 1.0,
