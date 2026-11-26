@@ -3,7 +3,7 @@ extends RefCounted
 """
 	This is a one time use obtainable from the slot machine and runs one instance in RunState
 		RunState.power_ups.add("broadside_bar")
-    	RunState.power_ups.use("broadside_bar")
+		RunState.power_ups.use("broadside_bar")
 		
 	The 'use' activates a held power up and the battle controller calls on_table_start()
 	consume_win_multiplayer() / on_table_end()

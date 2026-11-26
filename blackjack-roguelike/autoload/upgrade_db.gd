@@ -34,7 +34,8 @@ const ITEMS := {
 	"kraken_tooth": {"name": "Kraken Tooth", "kind": "dealer", "quality": 4,
 		"effects": {"damage_flat": 10, "thorns": 0.15}, "desc": "Hits 10 harder, reflects 15%"},
 
-	"starboard_ipa": {"name": "Starboard IPA", "kind": "drink", "quality": 1,
+	"starboard_ipa": {
+		"name": "Starboard IPA", "kind": "drink", "quality": 1,
 		"drunk_points": 2, "effects": {"damage_mult": 0.05}, "desc": "+5% damage"},
 	"dockside_cider": {"name": "Dockside Cider", "kind": "drink", "quality": 1,
 		"drunk_points": 2, "effects": {"chips_mult": 0.05}, "desc": "+5% chips from wins"},
@@ -50,7 +51,7 @@ const ITEMS := {
 }
 
 func price_of(id: String) -> int:
-	return ITEMS[id].get("price", PRICE_BY_QUALITY[ITEMS[id].quality])
+	return ITEMS[id].get("price", PRICE_BY_RARITY[ITEMS[id].quality])
 
 func ids_of(kind: String, quality := 0) -> Array:
 	var out: Array = []
@@ -63,15 +64,15 @@ func ids_of(kind: String, quality := 0) -> Array:
 func roll_item(kind: String) -> String:
 	var available: Array = []
 	var total := 0
-	for q in QUALITY_WEIGHT:
+	for q in RARITY_WEIGHT:
 		if not ids_of(kind, q).is_empty():
 			available.append(q)
-			total += QUALITY_WEIGHT[q]
+			total += RARITY_WEIGHT[q]
 	if available.is_empty():
 		return ""
 	var r := randi() % total
 	for q in available:
-		r -= QUALITY_WEIGHT[q]
+		r -= RARITY_WEIGHT[q]
 		if r < 0:
 			return ids_of(kind, q).pick_random()
 	return ids_of(kind, available[0]).pick_random()
