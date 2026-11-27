@@ -1,4 +1,4 @@
-class_name PowerUpState
+class_name PowerUps
 extends RefCounted
 """
 	This is a one time use obtainable from the slot machine and runs one instance in RunState
@@ -26,7 +26,10 @@ const DEFS := {
 		"name": "Krakens Fury", 
 		"catagory": "damage_mult", 
 		"rarity": 3,
-		"effect": {"wins": 3, "mult": 3.0}, 
+		"effect": {
+			"wins": 3, 
+			"mult": 3.0
+		}, 
 		"desc": "Your next 3 wins deal triple damage."
 	},
 	#--BLACKBEARDS TREASURE--
@@ -34,7 +37,10 @@ const DEFS := {
 		"name": "Blackbeards Treasure", 
 		"category": "damage_mult", 
 		"rarity": 3,
-		"effect": {"first_mult": 2.0, "rest_mult": 1.25},
+		"effect": {
+			"first_mult": 2.0, 
+			"rest_mult": 1.25,
+		},
 		"desc": "Lasts the whole table. First win deals 2x damage, the rest deal 1.25x"
 	},
 	#--KRAKENS TOOTH--
@@ -42,7 +48,10 @@ const DEFS := {
 		"name": "Kraken Tooth", 
 		"kind": "dealer", 
 		"rarity": 3,
-		"effects": {"damage_flat": 10, "thorns": 0.15}, 
+		"effects": {
+			"damage_flat": 10, 
+			"thorns": 0.15,
+		}, 
 		"desc": "Hits 10 harder, reflects 15%"
 	},
 	#--CAPTAINS COST--
@@ -50,7 +59,10 @@ const DEFS := {
 		"name": "Captain's Coat", 
 		"kind": "dealer", 
 		"rarity": 3,
-		"effects": {"armor": 4, "max_hp": 30}, 
+		"effects": {
+			"armor": 4, 
+			"max_hp": 30,
+		}, 
 		"desc": "Takes 4 less damage, +30 max HP"
 	},
 	# ========================
@@ -61,7 +73,10 @@ const DEFS := {
 		"name": "Broadside Bar", 
 		"category": "damage_mult", 
 		"rarity": 2,
-		"effect": {"wins": 1, "mult": 2.0}, 
+		"effect": {
+			"wins": 1, 
+			"mult": 2.0,
+		}, 
 		"desc": "Next win deals 2x damage"
 	},
 	#--FIRE THE CANNON--
@@ -69,7 +84,10 @@ const DEFS := {
 		"name": "Fire the Cannon", 
 		"category": "damage_mult", 
 		"rarity": 2,
-		"effect": {"wins": 2, "mult": 1.5}, 
+		"effect": {
+			"wins": 2, 
+			"mult": 1.5,
+		}, 
 		"desc": "Next 2 wins deal 1.5x damage"
 	},
 	#--SOFT TOUCH--
@@ -77,7 +95,9 @@ const DEFS := {
 		"name": "Soft Touch", 
 		"kind": "passive", 
 		"rarity": 2,
-		"effects": {"dealer_stand": -2}, 
+		"effects": {
+			"dealer_stand": -2,
+		}, 
 		"desc": "Dealer must stand on 15"
 	},
 	#--BARBED CHIPS--
@@ -85,7 +105,9 @@ const DEFS := {
 		"name": "Barbed Chips", 
 		"kind": "dealer", 
 		"rarity": 2,
-		"effects": {"thorns": 0.10}, 
+		"effects": {
+			"thorns": 0.10,
+		}, 
 		"desc": "Reflects 10% of damage taken"
 	},
 	#--AIM 24--
@@ -93,7 +115,9 @@ const DEFS := {
 		"name": "Aim for 24", 
 		"kind": "passive", 
 		"rarity": 3,
-		"effects": {"target": 3}, 
+		"effects": {
+			"target": 3,
+		}, 
 		"desc": "Aim for 24 instead of 21"
 	},
 	# ========================
@@ -104,7 +128,9 @@ const DEFS := {
 		"name": "Thorns", 
 		"kind": "passive", 
 		"rarity": 1,
-		"effects": {"thorns": 0.03}, 
+		"effects": {
+			"thorns": 0.03,
+		}, 
 		"desc": "Reflect 3% of damage taken"
 	},
 	#--SHARP CARDS--
@@ -112,7 +138,9 @@ const DEFS := {
 		"name": "Sharp Cards", 
 		"kind": "passive", 
 		"rarity": 1,
-		"effects": {"damage_flat": 1}, 
+		"effects": {
+			"damage_flat": 1,
+		}, 
 		"desc": "+1 damage"
 	},
 	#--BRASS KNUCKLES--
@@ -120,7 +148,9 @@ const DEFS := {
 		"name": "Brass Knuckles", 
 		"kind": "dealer", 
 		"rarity": 1,
-		"effects": {"damage_flat": 3}, 
+		"effects": {
+			"damage_flat": 3,
+		}, 
 		"desc": "Hits 3 harder"
 	},
 	#--IRON LIVER--
@@ -128,7 +158,9 @@ const DEFS := {
 		"name": "Iron Liver", 
 		"kind": "dealer", 
 		"rarity": 1,
-		"effects": {"max_hp": 15}, 
+		"effects": {
+			"max_hp": 15,
+		}, 
 		"desc": "+15 max HP"
 	},
 	#--PADDED VEST--
@@ -136,7 +168,9 @@ const DEFS := {
 		"name": "Padded Vest", 
 		"kind": "dealer", 
 		"rarity": 1,
-		"effects": {"armor": 2}, 
+		"effects": {
+			"armor": 2,
+		}, 
 		"desc": "Takes 2 less damage"
 	},
 	#--BAR TAB--
@@ -144,7 +178,9 @@ const DEFS := {
 		"name": "Bar Tab", 
 		"kind": "dealer", 
 		"rarity": 1,
-		"effects": {"heal_on_win": 5}, 
+		"effects": {
+			"heal_on_win": 5,
+		}, 
 		"desc": "Heals 5 HP when he wins a hand"
 	}
 }
