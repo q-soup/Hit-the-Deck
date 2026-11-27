@@ -13,19 +13,19 @@ var dealer_stand := 17
 
 signal round_ended(result: String, message: String)
 
-func build_deck() -> void:
+func build_deck(exclude: Array = []) -> void:
 	deck.clear()
 	for suit in SUITS:
 		for rank in RANKS:
-			deck.append(rank + suit)
-	deck.shuffle()  
-
+			var card : String = rank + suit
+			if card not in exclude:
+				deck.append(card)
+	deck.shuffle()
 
 func draw_card() -> String:
 	if deck.is_empty():
-		build_deck()
-	return deck.pop_back()  
-
+		build_deck(player_hand + dealer_hand)
+	return deck.pop_back()
 
 func card_value(card: String) -> int:
 	var rank := card.substr(0, card.length() - 1)  
@@ -68,7 +68,8 @@ func start_round() -> void:
 	target = RunState.stats.target
 	dealer_stand = RunState.stats.dealer_stand
 	outcome = ""
-	build_deck()
+	if deck.is_empty():
+		build_deck()
 	player_hand.clear()
 	dealer_hand.clear()
 	round_over = false
@@ -92,6 +93,8 @@ func hit() -> void:
 	print("Player: ", player_hand, " = ", hand_value(player_hand))
 	if hand_value(player_hand) > target:
 		end_round("lose", "Bust! Dealer wins.")
+	elif hand_value(player_hand) == target:
+		stand()
 
 
 func stand() -> void:
