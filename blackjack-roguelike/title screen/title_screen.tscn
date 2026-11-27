@@ -286,6 +286,7 @@ text = "Hit The"
 
 [node name="Line2" type="Control" parent="Logo" unique_id=938363251]
 layout_mode = 1
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -88.0

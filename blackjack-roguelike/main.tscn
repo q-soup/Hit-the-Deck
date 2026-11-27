@@ -20,6 +20,7 @@ process_mode = 3
 layer = 10
 
 [node name="paused" parent="." unique_id=346561133 instance=ExtResource("2_272bh")]
+visible = false
 
 [node name="Floor1Casino" parent="." unique_id=1757320050 instance=ExtResource("1_ig7tw")]
 process_mode = 1
@@ -37,6 +38,7 @@ limit_bottom = 480
 position = Vector2(641, 201)
 scale = Vector2(0.6, 0.6)
 portrait = ExtResource("5_272bh")
+is_final_boss = true
 
 [node name="Fodder Enemy" parent="Floor1Casino" unique_id=343721663 instance=ExtResource("5_lquwl")]
 position = Vector2(12, 259)
