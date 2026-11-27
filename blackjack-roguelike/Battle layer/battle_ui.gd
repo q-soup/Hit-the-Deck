@@ -54,6 +54,21 @@ func _ready() -> void:
 	player_portrait.play("idle")
 	player_portrait.animation_finished.connect(func(): player_portrait.play("idle"))
 
+func _input(event: InputEvent) -> void:
+	if get_tree().paused or not visible:
+		return
+
+	if event.is_action_pressed("hit") and not hit_button.disabled:
+		hit_pressed.emit()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("stand") and not stand_button.disabled:
+		stand_pressed.emit()
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("continue") and next_round_button.visible:
+		next_round_pressed.emit()
+		get_viewport().set_input_as_handled()
+
+
 func add_card(to_dealer: bool, text: String, face_down := false) -> void:
 	var card = CARD_SCENE.instantiate()
 	(dealer_hand if to_dealer else player_hand).add_child(card)
@@ -155,3 +170,4 @@ func set_dealer_items(ids: Array) -> void:
 		var row := Label.new()
 		row.text = "[%s] %s: %s" % [UpgradeDB.QUALITY_NAME[item.quality], item.name, item.desc]
 		dealer_items_box.add_child(row)
+		
