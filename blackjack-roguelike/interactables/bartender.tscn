@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://m0mky4t1duqh"]
+
+[ext_resource type="Script" uid="uid://cpdicdq67mpyd" path="res://interactables/bartender.gd" id="1_l7di2"]
+[ext_resource type="Texture2D" uid="uid://bxglrb76llnre" path="res://art/drinks/Screenshot_2026-11-27_at_3.30.31_PM-removebg-preview.png" id="1_y10e6"]
+[ext_resource type="PackedScene" uid="uid://c3fjincv3ril0" path="res://interactables/interactable.tscn" id="2_omtuo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d235m"]
+radius = 26.0
+height = 98.0
+
+[node name="Bartender" type="CharacterBody2D" unique_id=602001591]
+script = ExtResource("1_l7di2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=911961478]
+position = Vector2(308, 50)
+shape = SubResource("CapsuleShape2D_d235m")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1377085171]
+position = Vector2(309.00003, 45.999985)
+scale = Vector2(0.18981482, 0.1923077)
+texture = ExtResource("1_y10e6")
+region_enabled = true
+region_rect = Rect2(231.37573, 22.456436, 216.90271, 468.9231)
+
+[node name="Interactable" parent="." unique_id=1726701162 instance=ExtResource("2_omtuo")]
+
+[node name="CollisionShape2D" parent="Interactable" index="0" unique_id=1035421220]
+position = Vector2(310.00003, 89.00001)
+rotation = 2.6179938
+scale = Vector2(8.5, 8.5)
+skew = -0.7853982
+
+[node name="InteractionPrompt" parent="Interactable" index="1" unique_id=96949777]
+offset_left = 243.0
+offset_top = 2.0
+offset_right = 291.0
+offset_bottom = 16.0
+
+[editable path="Interactable"]

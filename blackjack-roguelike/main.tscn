@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c6vdon4aye3ax" path="res://interactables/fodder_enemy_2.tscn" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://ckhqfp0lftysy" path="res://art/portraits/fodder1.png" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://cdl06qw17n0k4" path="res://art/portraits/fodder2.png" id="9_4c57u"]
+[ext_resource type="PackedScene" uid="uid://m0mky4t1duqh" path="res://interactables/bartender.tscn" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bf1x4t2inablx" path="res://art/drinks/cocktails1/Single PNG/cocktail_2.png" id="12_ycdy4"]
 
 [node name="Main" type="Node" unique_id=627307981]
 process_mode = 3
@@ -20,6 +22,7 @@ process_mode = 3
 layer = 10
 
 [node name="paused" parent="." unique_id=346561133 instance=ExtResource("2_272bh")]
+visible = false
 
 [node name="Floor1Casino" parent="." unique_id=1757320050 instance=ExtResource("1_ig7tw")]
 process_mode = 1
@@ -45,3 +48,14 @@ portrait = ExtResource("7_kek77")
 [node name="fodder_enemy2" parent="Floor1Casino" unique_id=514260522 instance=ExtResource("6_7mycd")]
 position = Vector2(389, 0)
 portrait = ExtResource("9_4c57u")
+
+[node name="Bartender" parent="Floor1Casino" unique_id=602001591 instance=ExtResource("11_dg77c")]
+position = Vector2(207, 42)
+scale = Vector2(0.6, 0.6)
+
+[node name="drink" type="Sprite2D" parent="." unique_id=1103661187]
+light_mask = 0
+visibility_layer = 512
+position = Vector2(357, 65.00001)
+scale = Vector2(0.3125, 0.34375)
+texture = ExtResource("12_ycdy4")

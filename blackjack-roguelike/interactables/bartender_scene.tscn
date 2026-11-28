@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://s4emaes1ydvy"]
+
+[ext_resource type="Texture2D" uid="uid://bw613d6y0tbuu" path="res://art/tilsets/casino/2D_TopDown_Tileset_Casino_1024x512.png" id="1_t5sm5"]
+[ext_resource type="Texture2D" uid="uid://bxglrb76llnre" path="res://art/drinks/Screenshot_2026-11-27_at_3.30.31_PM-removebg-preview.png" id="2_3v6h0"]
+[ext_resource type="Texture2D" uid="uid://clnnot3lk6pls" path="res://art/drinks/Basic Pack.png" id="3_gnebd"]
+[ext_resource type="Texture2D" uid="uid://c4tls1qv5dilk" path="res://art/drinks/cocktails1/Single PNG/cocktail_3.png" id="4_73k33"]
+[ext_resource type="Texture2D" uid="uid://bf1x4t2inablx" path="res://art/drinks/cocktails1/Single PNG/cocktail_2.png" id="5_mewk3"]
+[ext_resource type="Texture2D" uid="uid://dwn0sxei5tu67" path="res://art/drinks/cocktails1/Single PNG/cocktail_1.png" id="6_bx0vv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d235m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mewk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bx0vv"]
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fanmo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7x3xe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_73k33"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnebd"]
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3v6h0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t5sm5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fb48h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gs47y"]
+content_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0n0n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmdlj"]
+
+[node name="bartender_scene" type="CanvasLayer" unique_id=780137211]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=402239734]
+offset_right = 652.0
+offset_bottom = 360.0
+color = Color(0.80784315, 0.22745098, 0.26666668, 1)
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=311721596]
+position = Vector2(513, 90.99999)
+scale = Vector2(2.3313253, 1.4907408)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(734.6852, 75.88403, 83.92493, 27.49482)
+
+[node name="Sprite2D10" type="Sprite2D" parent="." unique_id=326417919]
+position = Vector2(407, 170)
+scale = Vector2(2.3313253, 1.4907408)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(734.6852, 75.88403, 83.92493, 27.49482)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=546137686]
+position = Vector2(534, 208.00002)
+scale = Vector2(0.6412035, 0.5384616)
+texture = ExtResource("2_3v6h0")
+region_enabled = true
+region_rect = Rect2(231.37573, 22.456436, 216.90271, 468.9231)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=873768575]
+position = Vector2(331.99997, 279)
+scale = Vector2(7.450296, 5.5438433)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(505.40436, 81.43271, 127.03241, 67.14047)
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=443747137]
+position = Vector2(147.00002, 90.99999)
+scale = Vector2(2.3313253, 1.4907408)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(734.6852, 75.88403, 83.92493, 27.49482)
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=291023063]
+position = Vector2(330.00003, 90.99999)
+scale = Vector2(2.3313253, 1.4907408)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(734.6852, 75.88403, 83.92493, 27.49482)
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=195286911]
+position = Vector2(223.00002, 170)
+scale = Vector2(2.3313253, 1.4907408)
+texture = ExtResource("1_t5sm5")
+region_enabled = true
+region_rect = Rect2(734.6852, 75.88403, 83.92493, 27.49482)
+
+[node name="Sprite2D11" type="Sprite2D" parent="." unique_id=130676554]
+position = Vector2(118.00001, 52)
+scale = Vector2(1.8333334, 1.6875)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(0, 48.387146, 63.167778, 32.53183)
+
+[node name="Sprite2D12" type="Sprite2D" parent="." unique_id=1659797210]
+position = Vector2(372, 130)
+scale = Vector2(1.7031249, 1.9224137)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(81.42353, 51.79145, 14.576469, 28.162827)
+
+[node name="Sprite2D13" type="Sprite2D" parent="." unique_id=350488313]
+position = Vector2(402, 130)
+scale = Vector2(1.7031249, 1.9224137)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(81.42353, 51.79145, 14.576469, 28.162827)
+
+[node name="Sprite2D14" type="Sprite2D" parent="." unique_id=267306427]
+position = Vector2(430, 130)
+scale = Vector2(1.7031249, 1.9224137)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(81.42353, 51.79145, 14.576469, 28.162827)
+
+[node name="Sprite2D15" type="Sprite2D" parent="." unique_id=1504095181]
+position = Vector2(340, 133.00002)
+scale = Vector2(1.7, 1.6293111)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(64.556786, 50.39878, 15.783569, 29.091278)
+
+[node name="Sprite2D16" type="Sprite2D" parent="." unique_id=726502672]
+position = Vector2(530, 63)
+scale = Vector2(1.5208334, 1.9666667)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(0, 0, 96, 15.733188)
+
+[node name="Button" type="Button" parent="." unique_id=693804717]
+offset_left = 153.00002
+offset_top = 253.0
+offset_right = 185.00002
+offset_bottom = 288.0
+scale = Vector2(2.5, 2.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d235m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mewk3")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bx0vv")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_fanmo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7x3xe")
+icon = ExtResource("4_73k33")
+
+[node name="Button2" type="Button" parent="." unique_id=595674711]
+offset_left = 268.00003
+offset_top = 271.00003
+offset_right = 300.00003
+offset_bottom = 306.00003
+scale = Vector2(2.5, 2.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d235m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_73k33")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gnebd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_3v6h0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t5sm5")
+icon = ExtResource("5_mewk3")
+
+[node name="Button3" type="Button" parent="." unique_id=905136836]
+offset_left = 377.00003
+offset_top = 252.0
+offset_right = 409.00003
+offset_bottom = 287.0
+scale = Vector2(2.5, 2.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d235m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fb48h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_gs47y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_l0n0n")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hmdlj")
+icon = ExtResource("6_bx0vv")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=176944661]
+position = Vector2(41, 247)
+rotation = -1.3700835
+scale = Vector2(1.5625, 1.53125)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(80.0708, 80.466934, 15.929199, 15.533066)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=518304294]
+position = Vector2(559.99994, 295)
+rotation = -0.50963616
+scale = Vector2(1.5625, 1.53125)
+texture = ExtResource("3_gnebd")
+region_enabled = true
+region_rect = Rect2(80.0708, 80.466934, 15.929199, 15.533066)
+
+[node name="Label" type="Label" parent="." unique_id=556350339]
+offset_left = 278.0
+offset_top = 250.0
+offset_right = 330.0
+offset_bottom = 264.0
+text = "Mai Tai"
+
+[node name="Label2" type="Label" parent="." unique_id=1584899034]
+offset_left = 161.0
+offset_top = 234.0
+offset_right = 243.0
+offset_bottom = 248.0
+text = "Blue Hawaii"
+
+[node name="Label3" type="Label" parent="." unique_id=1943562803]
+offset_left = 386.0
+offset_top = 216.0
+offset_right = 455.0
+offset_bottom = 247.0
+text = "Galaxy 
+Cocktail"

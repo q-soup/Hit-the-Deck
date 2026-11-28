@@ -33,7 +33,7 @@ func _roll_loadout() -> void:
 	var budget := level
 	while budget > 0:
 		var q := randi_range(1, mini(MAX_ITEM_QUALITY, budget))
-		var id := UpgradeDB.roll_item_of_quality("dealer", q)
+		var id := UpgradeDB.roll_item_of_quality(q, "dealer")
 		if id == "":
 			break
 		items.append(id)
