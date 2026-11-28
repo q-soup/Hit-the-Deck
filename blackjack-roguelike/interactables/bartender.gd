@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 const BARTENDER_SCENE: PackedScene = preload("res://interactables/bartender_scene.tscn")
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var sprite = $CharacterBody2D
 
 func _ready():
+	add_to_group("bartender")
 	$Interactable.interact_name = "Talk to Bartender"
 	$Interactable.interacted.connect(interact)
 	
