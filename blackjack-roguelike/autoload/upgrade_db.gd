@@ -2,6 +2,7 @@ extends Node
 
 const QUALITY_WEIGHT := {1: 60, 2: 25, 3: 10, 4: 5}
 const QUALITY_NAME := {1: "Common", 2: "Uncommon", 3: "Rare", 4: "Legendary"}
+const QUALITY_COLOR := {1: Color("c0cbdc"), 2: Color("63c74d"), 3: Color("0099db"), 4: Color("fee761")} #fortnite solved this for us lmao
 const PRICE_BY_QUALITY := {1: 5, 2: 10, 3: 20, 4: 40}
 
 const BASE_STATS := {
@@ -11,13 +12,13 @@ const BASE_STATS := {
 }
 
 const ITEMS := {
-	"soft_touch": {"name": "Soft Touch", "kind": "passive", "quality": 2,
+	"soft_touch": {"name": "Soft Touch", "kind": "passive", "quality": 2, "icon": "res://art/ui/icons/soft_touch.png",
 		"effects": {"dealer_stand": -2}, "desc": "Dealer must stand on 15"},
-	"aim_24": {"name": "Aim for 24", "kind": "passive", "quality": 3,
+	"aim_24": {"name": "Aim for 24", "kind": "passive", "quality": 3, "icon": "res://art/ui/icons/aim_24.png",
 		"effects": {"target": 3}, "desc": "Aim for 24 instead of 21"},
-	"thorns": {"name": "Thorns", "kind": "passive", "quality": 2,
+	"thorns": {"name": "Thorns", "kind": "passive", "quality": 2, "icon": "res://art/ui/icons/thorns.png",
 		"effects": {"thorns": 0.03}, "desc": "Reflect 3% of damage taken"},
-	"sharp_cards": {"name": "Sharp Cards", "kind": "passive", "quality": 1,
+	"sharp_cards": {"name": "Sharp Cards", "kind": "passive", "quality": 1, "icon": "res://art/ui/icons/sharp_cards.png",
 		"effects": {"damage_flat": 1}, "desc": "+1 damage"},
 	"brass_knuckles": {"name": "Brass Knuckles", "kind": "dealer", "quality": 1,
 		"effects": {"damage_flat": 3}, "desc": "Hits 3 harder"},
@@ -56,7 +57,8 @@ func ids_of(kind: String, quality := 0) -> Array:
 	var out: Array = []
 	for id in ITEMS:
 		var item: Dictionary = ITEMS[id]
-		if item.kind == kind and (quality == 0 or item.quality == quality):
+		var kind_ok: bool = item.kind == kind or (kind == "upgrade" and item.kind in ["passive", "active"]) #no drinks in the slot shop
+		if kind_ok and (quality == 0 or item.quality == quality):
 			out.append(id)
 	return out
 
