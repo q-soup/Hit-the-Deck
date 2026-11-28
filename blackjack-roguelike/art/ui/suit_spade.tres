@@ -1,8 +1,7 @@
 [gd_resource type="AtlasTexture" format=3 uid="uid://c2ebbn1dhpgji"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hof18"]
-load_path = "res://.godot/imported/2D_TopDown_Tileset_Casino_1024x512.png-dcfafe7617d7dfe63693b89407277aa9.ctex"
+[ext_resource type="Texture2D" uid="uid://bw613d6y0tbuu" path="res://art/tilsets/casino/2D_TopDown_Tileset_Casino_1024x512.png" id="1_w43qn"]
 
 [resource]
-atlas = SubResource("CompressedTexture2D_hof18")
+atlas = ExtResource("1_w43qn")
 region = Rect2(800, 400, 16, 16)
