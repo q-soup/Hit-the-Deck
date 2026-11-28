@@ -40,6 +40,7 @@ limit_bottom = 480
 position = Vector2(641, 201)
 scale = Vector2(0.6, 0.6)
 portrait = ExtResource("5_272bh")
+is_final_boss = true
 
 [node name="Fodder Enemy" parent="Floor1Casino" unique_id=343721663 instance=ExtResource("5_lquwl")]
 position = Vector2(12, 259)

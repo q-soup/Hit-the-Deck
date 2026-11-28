@@ -44,7 +44,7 @@ func refresh_buttons() -> void:
 			continue
 		var id: String = current_items[i]
 		var item: Dictionary = UpgradeDB.ITEMS[id]
-		var price := UpgradeDB.price_of(id)
+		var price : int = UpgradeDB.price_of(id)
 		btn.tooltip_text = item.desc
 		if sold[i]:
 			btn.text = "SOLD"

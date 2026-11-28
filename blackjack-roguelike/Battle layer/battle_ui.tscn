@@ -41,19 +41,6 @@ region_rect = Rect2(490, 836, 44, 22)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7uj42"]
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_l23rs"]
-button_index = 3
-pressed = true
-
-[sub_resource type="InputEventKey" id="InputEventKey_sw1gg"]
-device = -1
-pressed = true
-keycode = 69
-unicode = 101
-
-[sub_resource type="Shortcut" id="Shortcut_1bvp3"]
-events = [SubResource("InputEventJoypadButton_l23rs"), SubResource("InputEventKey_sw1gg")]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sc8wt"]
 texture = ExtResource("4_3lxov")
 texture_margin_left = 8.0
@@ -88,18 +75,6 @@ region_rect = Rect2(490, 836, 44, 22)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lbfbi"]
 
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_ik16v"]
-pressed = true
-
-[sub_resource type="InputEventKey" id="InputEventKey_qhm6w"]
-device = -1
-pressed = true
-keycode = 81
-unicode = 113
-
-[sub_resource type="Shortcut" id="Shortcut_7mycd"]
-events = [SubResource("InputEventJoypadButton_ik16v"), SubResource("InputEventKey_qhm6w")]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cahr0"]
 texture = ExtResource("4_3lxov")
 texture_margin_left = 8.0
@@ -125,19 +100,6 @@ texture_margin_bottom = 8.0
 region_rect = Rect2(792, 2, 48, 28)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tkede"]
-
-[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_seuhl"]
-resource_name = "conotinue"
-button_index = 10
-pressed = true
-
-[sub_resource type="InputEventKey" id="InputEventKey_seuhl"]
-device = -1
-keycode = 32
-unicode = 32
-
-[sub_resource type="Shortcut" id="Shortcut_5vw27"]
-events = [SubResource("InputEventJoypadButton_seuhl"), SubResource("InputEventKey_seuhl")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhm6w"]
 atlas = ExtResource("3_qhm6w")
@@ -317,7 +279,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_8fd0j")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0roqb")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_ojlel")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7uj42")
-shortcut = SubResource("Shortcut_1bvp3")
 text = "Hit"
 
 [node name="StandButton" type="Button" parent="Root/Buttons" unique_id=368909203]
@@ -328,7 +289,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_uwu2r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qn6av")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_3c63w")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_lbfbi")
-shortcut = SubResource("Shortcut_7mycd")
 text = "Stand"
 
 [node name="NextRoundButton" type="Button" parent="Root" unique_id=1355021604]
@@ -342,7 +302,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_cahr0")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_daymo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_roa52")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tkede")
-shortcut = SubResource("Shortcut_5vw27")
 text = "Continue"
 
 [node name="␣Hint" type="NinePatchRect" parent="Root/NextRoundButton" unique_id=2059843654]

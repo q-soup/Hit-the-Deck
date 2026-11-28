@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 #connect stats and menu scene and emit when winning conditions are met
-@export_file("*.tscn") var main_menu_scene: String
+@export_file("*.tscn") var main_menu_scene: String = "res://title screen/title_screen.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

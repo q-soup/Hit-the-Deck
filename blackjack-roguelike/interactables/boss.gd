@@ -5,6 +5,7 @@ var defeated := false
 @export var max_hp := 50 #set per enemy in the inspector
 @export var damage := 10
 @export var portrait: Texture2D
+@export var is_final_boss := false
 
 var level := 1
 var dealer: DealerData
